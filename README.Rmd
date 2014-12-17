@@ -46,5 +46,5 @@ data(package = "igraphdata")
 
 # License
 
-CC BY-SA 2.0, plus see [LICENSE](LICENSE) for the licenses of the
+CC BY-SA 4.0, plus see [LICENSE](LICENSE) for the licenses of the
 individual data sets.
