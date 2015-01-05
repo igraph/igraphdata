@@ -43,6 +43,7 @@ data(package = "igraphdata")
 #> UKfaculty             Friendship network of a UK university
 #>                       faculty
 #> USairports            US airport network, 2010 December
+#> enron                 Enron Email Network
 #> foodwebs              A collection of food webs
 #> immuno                Immunoglobulin interaction network
 #> karate                Zachary's karate club network
