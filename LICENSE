@@ -32,6 +32,13 @@ USairports
 The data is from the Research and Innovative Technology Administration, 
 and it is in the Public Domain.
 
+enron
+-----
+
+The data was downloaded from http://www.cis.jhu.edu/~parky/Enron/
+Please cite the appropriate paper (see the manual) if you use
+this data set.
+
 foodwebs
 --------
 
