@@ -504,3 +504,205 @@ kite$Author <- "David Krackhardt"
 kite$URL <- "http://www.orgnet.com/sna.html"
 
 save(kite, file = "/tmp/kite.rda")
+
+#####################################################################
+## ENRON
+
+vert <- read.delim("http://www.cis.jhu.edu/~parky/Enron/employees",
+                   col.names = c("email", "other"),
+                   header = FALSE, stringsAsFactors = FALSE)
+vert$name <- sapply(strsplit(vert$other, "  [ ]*"), "[[", 1)
+vert$note <- paste(sapply(strsplit(vert$other, "  [ ]*"), "[", 2),
+                   sep = ", ",
+                   sapply(strsplit(vert$other, "  [ ]*"), "[", 3))
+vert$note <- gsub("N/A", "NA", vert$note)
+vert$note <- gsub(", NA", "", vert$note)
+vert$name <- gsub("xxx", "NA", vert$name)
+
+edges <- read.delim("http://www.cis.jhu.edu/~parky/Enron/execs.email.linesnum",
+                    header = FALSE, col.names = c("time", "from", "to"),
+                    stringsAsFactors = FALSE, sep = " ")
+
+tags <- read.delim("http://www.cis.jhu.edu/~parky/Enron/execs.email.lines2",
+                   header = FALSE, col.names = c("time", "from", "to", "tag"),
+                   stringsAsFactors = FALSE, sep = " ")
+
+all(tags[,1:3] == edges)
+
+topics <- read.delim("http://www.cis.jhu.edu/~parky/Enron/execs.email.linesnum.topic",
+                     header = TRUE, col.names = c("time", "from", "to", "topic"),
+                     stringsAsFactors = FALSE, sep = " ")
+
+all(topics[,1:3] == edges)
+
+ldc_topics <- read.delim("http://www.cis.jhu.edu/~parky/Enron/execs.email.linesnum.ldctopic",
+                     header = TRUE, col.names = c("time", "from", "to", "ldc_topic"),
+                     stringsAsFactors = FALSE, sep = " ")
+
+all(ldc_topics[,1:3] == edges)
+
+ldc <- c("Calif_analysis", "Calif_bankruptcy", "Calif_utilities",
+         "Calif_crisis_legal", "Calif_enron", "Calif_federal",
+         "Newsfeed_Calif", "Calif_legis", "Daily_business",
+         "Educational", "EnronOnline", "Kitchen_daily",
+         "Kitchen_fortune", "Energy_newsfeed", "General_newsfeed",
+         "Downfall", "Downfall_newsfeed", "Broadband",
+         "Federal_gov", "FERC_DOE", "College Football",
+         "Pro Football", "India_General", "India_Dabhol",
+         "Nine_eleven", "Nine_Eleven_Analysis", "Dynegy",
+         "Sempra", "Duke", "El Paso",
+         "Pipelines", "World_energy")
+
+
+ldc_desc_text <- "
+Executive summaries and analyses about the California situation. (304
+entries)
+
+Specifically mentioned financial difficulties of the utilities such as
+Southern California Edison (SoCal Edison) and Pacific Gas & Electric
+(PG & E). (36 entries)
+
+General references to California utility companies: Edison, Pacific Gas &
+Electric, and the California Public Utility Commission (CPUC) which
+regulates them. (116)
+
+Articles about legal issues surrounding California energy crisis.  (109)
+
+Enron business emails about the day to day operations of managing the
+California side of their business. (699)
+
+Emails about FERC (Federal Energy Regulatory Commission), U.S.  Senate
+Hearings. (61)
+
+Long emails with a host of stories about California. These emails were news
+feeds from wire services such as Reuters and Dow Jones, which were widely
+circulated among Enron employees. (190)
+
+Emails about California legislature, bills in the California legislature or
+California Governor Gray Davis that are not related to the specifics such
+as bankruptcy or the energy crisis. (181)
+
+As one might expect, the majority of the emails in this collection are
+emails about the regular day to day activities of a multinational energy
+company (i.e. “ trade this share, buy these shares,” etc.). Other daily
+business emails include setting up meetings, confirming meetings, and
+general announcements from human resources.  These almost defy
+categorization by topic, but they do have a value. Researchers may decide
+to remove these emails to reduce the amount of noise in the collection and
+to improve their ability to detect topics. However keeping them in the
+collection provides an element of noise that gives the collection a “real
+life” quality. Either way by tagging such emails, the researcher has the
+option. (1595)
+
+This was a surprise topic that emerged later. It related to Enron's
+interns, scholarships or employees who are professors. Many of these emails
+center around the Head of the Research Group Vince Kaminski who taught at
+Rice University in Houston part time. (92)
+
+Enrononline is the electronic trading and information software tool that
+the Enron traders used. It was an invaluable asset to the company and gave
+them an edge on their competitors. Louise Kitchen was an early developer of
+the technology.  (271)
+
+Daily emails to and from Louise Kitchen who developed Enrononline. This
+category includes questions to Kitchen about running EOL and trading
+information. (37)
+
+Louise Kitchen was selected as one to the top corporate women in a Fortune
+magazine story (September 2001). (11)
+
+Wire news feeds about various energy issues. Think of it as an electronic
+newsletter about energy that is circulation to a number of Enron employees.
+Usually these are lengthy emails. (332)
+
+Long emails (wire feeds) with a host of general national and international
+stories. (48)
+
+Articles about Enron's demise. Messages from employees worrying about what
+is going on. This includes announcements from management about “not
+worrying about it.” (158)
+
+Wire stories about Enron's demise. (48)
+
+Enron Broadband Services (EBS) Enron's failed Broadband (high speed cable
+to deliver entertainment) venture. (26)
+
+General information about Federal government that does not specifically
+mention California. (85)
+
+General information about the Federal Energy Regulatory
+Commission/Department of Energy. (219)
+
+Employee emails about college football more specifically a newsletter
+called TruOrange, which follows University of Texas football. (100)
+
+Employee emails about professional football (The NFL), but these refer to
+fantasy pro football leagues, where the statistics of real players are used
+to play an online version of football. (6)
+
+General information about the India energy issues. (38)
+
+Specific references to India Dabhol Power Company (DPC), the Maharastra
+State Electricity Board (MSEB), and the Indian province of Maharastra. (79)
+
+The terrorist attack of September 11, 2001. Mostly newscasts and
+updates. (29)
+
+Aftermath analysis (political and economic) resulting from the attack. (30)
+
+This company was a competitor of Enron. They almost purchased Enron in
+Oct-Nov. 2001, but let Enron plummet into bankruptcy instead. (7)
+
+A utilities company that works with Enron. (16)
+
+Emails about Duke Energy. (17)
+
+Emails about El Paso Energy/Pipeline Company. (34)
+
+General pipeline management. Note that pipelines are important part in
+transporting energy from one place to another. Enron’s original business
+was a pipeline business. (17)
+
+A general category about energy with one or more specific geographic
+locations (such as Asia, Africa) that is not about India. (25)
+"
+
+ldc_desc <- strsplit(ldc_desc_text, "\n\n")[[1]]
+ldc_desc <- gsub("\n", " ", ldc_desc)
+ldc_desc <- gsub("^[[:space:]]+", "", ldc_desc)
+ldc_desc <- gsub("[[:space:]]+$", "", ldc_desc)
+
+reciptype_code <- c("0" = "to", "1" = "cc", "2" = "bcc")
+reciptype <- unname(reciptype_code[as.character(tags[,4])])
+g_edges <- data.frame(
+  stringsAsFactors = FALSE,
+  edges,
+  reciptype = reciptype,
+  topic = topics[,4],
+  ldc_topic = ldc_topics[,4]
+)
+
+g_edges$time <- as.character(as.POSIXct(edges$time, origin = "1970-01-01",
+                                         tz = "UTC"))
+g_edges <- g_edges[c("from", "to", "time", "reciptype", "topic", "ldc_topic")]
+names(g_edges) <- c("from", "to", "Time", "Reciptype", "Topic", "LDC_topic")
+
+g_vert <- cbind(id = seq_len(nrow(vert)) - 1, vert)
+g_vert <- g_vert[, colnames(g_vert) != "other"]
+names(g_vert) <- c("id", "Email", "Name", "Note")
+
+enron <- make_directed_graph(t(as.matrix(g_edges[,1:2])) + 1)
+
+V(enron)$Email <- g_vert$Email
+V(enron)$Name <- g_vert$Name
+V(enron)$Note <- g_vert$Note
+
+E(enron)$Time <- g_edges$Time
+E(enron)$Reciptype <- g_edges$Reciptype
+E(enron)$Topic <- g_edges$Topic
+E(enron)$LDC_topic <- g_edges$LDC_topic
+
+enron$LDC_names <- ldc
+enron$LDC_desc <- ldc_desc
+enron$name <- "Enron email network"
+enron$Citation <- c('C.E. Priebe, J.M. Conroy, D.J. Marchette, and Y. Park, "Scan Statistics on Enron Graphs," Computational and Mathematical Organization Theory, Volume 11, Number 3, p229 - 247, October 2005, Springer Science+Business Media B.V.')
