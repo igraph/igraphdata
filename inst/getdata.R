@@ -706,3 +706,22 @@ enron$LDC_names <- ldc
 enron$LDC_desc <- ldc_desc
 enron$name <- "Enron email network"
 enron$Citation <- c('C.E. Priebe, J.M. Conroy, D.J. Marchette, and Y. Park, "Scan Statistics on Enron Graphs," Computational and Mathematical Organization Theory, Volume 11, Number 3, p229 - 247, October 2005, Springer Science+Business Media B.V.')
+
+#####################################################################
+## RFID
+
+library(sand)
+data(hc)
+
+edges <- hc[,c(2,3,1)]
+vv <- character(max(hc[,2:3]))
+vv[hc$ID1] <- as.character(hc$S1)
+vv[hc$ID2] <- as.character(hc$S2)
+
+v <- data.frame(id = seq_along(vv), Status = vv, stringsAsFactors = FALSE)
+
+rfid <- graph_from_data_frame(edges, vertices = v, directed = FALSE)
+rfid <- delete_vertex_attr(rfid, 'name')
+
+rfid$name <- "RFID hospital encounter network"
+rfid$Citation <- "P. Vanhems, A. Barrat, C. Cattuto, J.-F. Pinton, N. Khanafer,   C. Regis, B.-a. Kim, B. Comte, N. Voirin: Estimating potential   infection transmission routes in hospital wards using wearable   proximity sensors. PloS One 8(9), e73970 306 (2013)."

@@ -89,6 +89,18 @@ cortical areas and connections involved in the tactile function of the
 visual cortex by network analysis. European Journal of Neuroscience
 23(7):1919–1930, 2006. 
 
+rfid
+----
+
+This data set is licensed under a GPL v3 license.
+
+Please cite the following reference if you use this dataset:
+
+P. Vanhems, A. Barrat, C. Cattuto, J.-F. Pinton, N. Khanafer,
+C. Regis, B.-a. Kim, B. Comte, N. Voirin: Estimating potential
+infection transmission routes in hospital wards using wearable
+proximity sensors. PloS One 8(9), e73970 306 (2013).
+
 yeast
 -----
 
