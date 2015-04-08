@@ -1,5 +1,5 @@
 Package: igraphdata
-Title: A collection of network data sets for the igraph package
+Title: A Collection of Network Data Sets for the Igraph Package
 Version: 0.2.2
 Author: Gabor Csardi <csardi.gabor@gmail.com>
 Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
@@ -12,4 +12,4 @@ Description: A small collection of various network data sets,
     package.
 License: CC BY-SA 4.0 + file LICENSE
 URL: http://igraph.org
-BugReports: https://github.com/igraph/igraph/issues
+BugReports: https://github.com/igraph/igraphdata/issues
