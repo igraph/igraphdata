@@ -40,7 +40,7 @@ enron
     message body.
     \item \sQuote{LDC_topic} Assigned based on Michael W. Berry's 2001
     \dQuote{Annotated (by Topic) Enron Email Data Set.}
-    \url{(http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf})
+    (\url{http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf})
     There are 32 topics. Topic "0" means an outlier, e.g., too few words
     or all meaningless numbers in the message body, etc. Topic "-1"
     means there is no matching topic.
