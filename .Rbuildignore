@@ -3,3 +3,4 @@
 ^tags$
 ^appveyor.yml$
 ^.travis.yml$
+^inst/wikipedia$
