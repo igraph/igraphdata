@@ -8,7 +8,7 @@ Depends:
 Suggests:
     igraph (>= 1.0.0)
 Description: A small collection of various network data sets,
-    to use with the igraph package: the Enron email network, various food webs,
+    to use with the 'igraph' package: the Enron email network, various food webs,
     interactions in the immunoglobulin protein, the karate club network,
     Koenigsberg's bridges, visuotactile brain areas of the macaque monkey,
     UK faculty friendship network, domestic US flights network, etc.
