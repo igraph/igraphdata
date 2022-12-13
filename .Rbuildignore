@@ -4,3 +4,5 @@
 ^appveyor.yml$
 ^.travis.yml$
 ^inst/wikipedia$
+^igraphdata\.Rproj$
+^\.Rproj\.user$
