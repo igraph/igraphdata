@@ -27,7 +27,7 @@
 #' @format
 #'   An undirected \code{igraph} graph object with vertex attributes
 #'   \sQuote{name} and \sQuote{Euler_letter}, the latter is the notation
-#'   from Eulers original paper; and edge attributes \code{name} (the name
+#'   from Eulers original paper; and edge attributes \sQuote{name} (the name
 #'   of the bridge) and \sQuote{Euler_letter}, again, Euler's notation
 #'   from his paper.
 #'
