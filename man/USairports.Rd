@@ -1,20 +1,7 @@
-\name{USairports}
 \docType{data}
+\name{USairports}
 \alias{USairports}
 \title{US airport network, 2010 December}
-\description{
-  The network of passanger flights between airports in the United
-  States. The data set was compiled based on flights in 2010
-  December. This network is directed and edge directions correspond to
-  flight directions. Each edge is specific to a single carrier aircraft
-  type. Multiple carriers between the same two airports are denoted by
-  multiple edges.
-
-  See information about the included meta-data below.
-}
-\usage{
-USairports
-}
 \format{
   A directed \code{igraph} graph object, with multiple edges. It has a
   \sQuote{name} graph attribute, and several vertex and edge
@@ -47,6 +34,19 @@ USairports
   \url{http://www.rita.dot.gov/about_rita/} for details. The airport
   position information was collected from Wikipedia and other public
   online sources.
+}
+\usage{
+USairports
+}
+\description{
+  The network of passanger flights between airports in the United
+  States. The data set was compiled based on flights in 2010
+  December. This network is directed and edge directions correspond to
+  flight directions. Each edge is specific to a single carrier aircraft
+  type. Multiple carriers between the same two airports are denoted by
+  multiple edges.
+
+  See information about the included meta-data below.
 }
 % \references{}
 \keyword{datasets}

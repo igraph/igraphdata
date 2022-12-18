@@ -1,19 +1,7 @@
-\name{yeast}
 \docType{data}
+\name{yeast}
 \alias{yeast}
 \title{Yeast protein interaction network}
-\description{
-  Comprehensive protein-protein interaction maps promise to reveal many
-  aspects of the complex regulatory network underlying cellular
-  function.
-
-  This data set was compiled by von Mering et al. (see reference below),
-  combining various sources. Only the interactions that have 
-  \sQuote{high} and \sQuote{medium} confidence are included here.
-}
-\usage{
-yeast
-}
 \format{
   An undirected \code{igraph} graph object. Its graph attributes:
   \sQuote{name}, \sQuote{Citation}, \sQuote{Author},
@@ -23,7 +11,7 @@ yeast
   after the semicolon:
   \describe{
     \item{E}{energy production; energy}
-    \item{G}{aminoacid metabolism; aminoacid metabolism} 
+    \item{G}{aminoacid metabolism; aminoacid metabolism}
     \item{M}{other metabolism; all remaining metabolism categories}
     \item{P}{translation; protein synthesis}
     \item{T}{transcription; transcription, but without subcategory
@@ -45,7 +33,7 @@ yeast
     \item{U}{uncharacterized; categories \sQuote{not yet clear-cut} and
       \sQuote{uncharacterized}}
   }
-  
+
   Vertex attributes: \sQuote{name}, \sQuote{Description},
   \sQuote{Class}, the last one contains the class of the protein,
   accoring to the classification above.
@@ -57,10 +45,22 @@ yeast
 \source{The data was downloaded from
   \url{http://www.nature.com/nature/journal/v417/n6887/suppinfo/nature750.html}.
 }
+\usage{
+yeast
+}
+\description{
+  Comprehensive protein-protein interaction maps promise to reveal many
+  aspects of the complex regulatory network underlying cellular
+  function.
+
+  This data set was compiled by von Mering et al. (see reference below),
+  combining various sources. Only the interactions that have
+  \sQuote{high} and \sQuote{medium} confidence are included here.
+}
 \references{
 Comparative assessment of large-scale data sets of protein-protein
   interactions. Christian von Mering, Roland Krause, Berend Snel,
   Michael Cornell, Stephen G. Oliver, Stanley Fields and Peer
-  Bork. \emph{Nature} 417, 399-403 (2002) 
+  Bork. \emph{Nature} 417, 399-403 (2002)
 }
 \keyword{datasets}

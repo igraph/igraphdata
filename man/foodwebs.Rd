@@ -1,12 +1,7 @@
-\name{foodwebs}
 \docType{data}
+\name{foodwebs}
 \alias{foodwebs}
 \title{A collection of food webs}
-\description{A list of graphs. Each one is a food web, i.e. a directed
-  graph of predator-prey relationships.}
-\usage{
-foodwebs
-}
 \format{
   A named list of directed \code{igraph} graph objects. Here are the
   list of the graphs included:
@@ -74,7 +69,7 @@ foodwebs
       Maryland System Center for Environmental Science, Chesapeake
       Biological Laboratory, Maryland, USA.}
     \item{\sQuote{baywet}}{Florida Bay Trophic Exchange Matrix, wet season.
-      
+
       Reference: same as for \sQuote{baydry}.}
     \item{\sQuote{cypdry}}{Cypress, dry season.
 
@@ -106,7 +101,7 @@ foodwebs
       Report TS-191-99, Maryland System Center for Environmental Science,
       Chesapeake Biological Laboratory, Maryland, USA.}
     \item{\sQuote{mangwet}}{Mangrove Estuary, Wet Season.
-      
+
       Reference: same as for \sQuote{mangdry}.}
   }
 
@@ -122,10 +117,10 @@ foodwebs
   }
   The \sQuote{Biomass} vertex attribute contains the biomass of the
   species.
-  
+
   Edges are weighted, and the weights denote energy flux between the
   species involved.
-  
+
   The graphs also contain some informative graph attributes:
   \sQuote{Author}, \sQuote{Citation}, \sQuote{URL}, and
   \sQuote{name}.
@@ -134,5 +129,10 @@ foodwebs
   was downloaded from
   \url{http://vlado.fmf.uni-lj.si/pub/networks/data/bio/foodweb/foodweb.htm}.
 }
+\usage{
+foodwebs
+}
+\description{A list of graphs. Each one is a food web, i.e. a directed
+  graph of predator-prey relationships.}
 \references{See them above.}
 \keyword{datasets}

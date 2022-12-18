@@ -1,16 +1,7 @@
-\name{kite}
 \docType{data}
+\name{kite}
 \alias{kite}
 \title{Krackhardt's kite}
-\description{
-  Krackhardt's kite is a fictionary social network with ten actors.
-  It is the smallest graph for which the most central actor is different
-  according to the three classic centality measures: degree, closeness
-  and betweenness.
-}
-\usage{
-kite
-}
 \format{
   An undirected igraph graph with graph attributes \code{name},
   \code{layout}, \code{Citation}, \code{Author}, \code{URL}, and vertex
@@ -18,6 +9,15 @@ kite
 }
 \source{
   \url{http://www.orgnet.com/sna.html}
+}
+\usage{
+kite
+}
+\description{
+  Krackhardt's kite is a fictionary social network with ten actors.
+  It is the smallest graph for which the most central actor is different
+  according to the three classic centality measures: degree, closeness
+  and betweenness.
 }
 \references{
   Assessing the Political Landscape: Structure, Cognition, and Power in

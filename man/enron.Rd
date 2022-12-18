@@ -1,13 +1,7 @@
-\name{enron}
 \docType{data}
+\name{enron}
 \alias{enron}
 \title{Enron Email Network}
-\description{
-  An Enron email dataset has been made public by the U.S. Department of Justice.
-}
-\usage{
-enron
-}
 \format{
   A directed \code{igraph} graph object.
 
@@ -49,31 +43,37 @@ enron
 \source{
   \url{http://www.cis.jhu.edu/~parky/Enron/}
 }
+\usage{
+enron
+}
+\description{
+  An Enron email dataset has been made public by the U.S. Department of Justice.
+}
 \references{
   C.E. Priebe, J.M. Conroy, D.J. Marchette, and Y. Park,
   Scan Statistics on Enron Graphs Computational and Mathematical
   Organization Theory, Volume 11, Number 3, p229 - 247, October 2005,
   Springer Science+Business Media B.V.
-    
+
   C.E. Priebe, J.M. Conroy, D.J. Marchette, and Y. Park,
   Scan Statistics on Enron Graphs, SIAM International Conference on
   Data Mining, Workshop on Link Analysis, Counterterrorism and Security,
   Newport Beach, California, April 23, 2005.
-  
+
   Gina Kolata, Enron Offers an Unlikely Boost to E-Mail Surveillance,
   New York Times, Week in Review, May 22, 2005.
-  
+
   C.E. Priebe, Scan Statistics on Enron Graphs, IPAM Summer Graduate
   School: Intelligent Extraction of Information from Graphs and High
   Dimensional Data, UCLA, July 11-29, 2005.
-  
+
   C.E. Priebe, Scan Statistics on Enron Graphs, 2005 Fall Department
   of Applied Mathematics and Statistics Seminars, September 15, 2005,
   The Johns Hopkins University.
 
   Y. Park, C.E. Priebe, D.J. Marchette, Scan Statistics on Enron
   Hypergraphs, Interface 2008, Durham, North Carolina, May 21, 2008,
-  
+
   Y. Park, C.E. Priebe, D.J. Marchette, Anomaly Detection using Scan
   Statistics on Enron Graphs and Hypergraphs, The Satellite Workshop of
   the IASC 2008 Conference, Seoul, Korea, December 1-3, 2008.

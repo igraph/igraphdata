@@ -1,17 +1,7 @@
-\name{immuno}
 \docType{data}
+\name{immuno}
 \alias{immuno}
 \title{Immunoglobulin interaction network}
-\description{
-  The undirected and connected network of interactions
-  in the immunoglobulin protein. It is made up of 1316 vertices
-  representing amino-acids and an edge is drawn between two
-  amino-acids if the shortest distance between their C_alpha atoms
-  is smaller than the threshold value \eqn{\theta=8}{theta=8} Angstrom.
-}
-\usage{
-immuno
-}
 \format{
   An undirected \code{igraph} graph object.
 
@@ -19,6 +9,16 @@ immuno
 }
 \source{
   See reference below.
+}
+\usage{
+immuno
+}
+\description{
+  The undirected and connected network of interactions
+  in the immunoglobulin protein. It is made up of 1316 vertices
+  representing amino-acids and an edge is drawn between two
+  amino-acids if the shortest distance between their C_alpha atoms
+  is smaller than the threshold value \eqn{\theta=8}{theta=8} Angstrom.
 }
 \references{
   D. Gfeller, Simplifying complex networks: from a clustering to a
