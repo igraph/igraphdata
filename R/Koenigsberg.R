@@ -25,7 +25,7 @@
 #' @usage
 #' Koenigsberg
 #' @format
-#'   An undirected \code{igraph} graph object with vertex attributes
+#'   An undirected `igraph` graph object with vertex attributes
 #'   \sQuote{name} and \sQuote{Euler_letter}, the latter is the notation
 #'   from Eulers original paper; and edge attributes \sQuote{name} (the name
 #'   of the bridge) and \sQuote{Euler_letter}, again, Euler's notation
@@ -33,6 +33,6 @@
 #'
 #'   This dataset is in the public domain.
 #' @source Wikipedia,
-#'   \url{http://de.wikipedia.org/wiki/K%C3%B6nigsberger_Br%C3%BCcken}
+#'   <http://de.wikipedia.org/wiki/K%C3%B6nigsberger_Br%C3%BCcken>
 #' @keywords datasets
 NULL

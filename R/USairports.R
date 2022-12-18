@@ -18,7 +18,7 @@
 #' @usage
 #' USairports
 #' @format
-#'   A directed \code{igraph} graph object, with multiple edges. It has a
+#'   A directed `igraph` graph object, with multiple edges. It has a
 #'   \sQuote{name} graph attribute, and several vertex and edge
 #'   attributes. The vertex attributes:
 #'   \describe{
@@ -45,7 +45,7 @@
 #' @source
 #'   Most of this information was downloaded from The Research and
 #'   Innovative Technology Administration (RITA). See
-#'   \url{http://www.rita.dot.gov/about_rita/} for details. The airport
+#'   <http://www.rita.dot.gov/about_rita/> for details. The airport
 #'   position information was collected from Wikipedia and other public
 #'   online sources.
 #' @keywords datasets

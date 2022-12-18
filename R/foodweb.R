@@ -11,7 +11,7 @@
 #' @usage
 #' foodwebs
 #' @format
-#' A named list of directed \code{igraph} graph objects. Here are the
+#' A named list of directed `igraph` graph objects. Here are the
 #' list of the graphs included:
 #' \describe{
 #'   \item{\sQuote{ChesLower}}{Lower Chesapeake Bay in Summer.
@@ -135,6 +135,6 @@
 #' @references See them above.
 #' @source See references for the individual webs above. The data itself
 #'   was downloaded from
-#'   \url{http://vlado.fmf.uni-lj.si/pub/networks/data/bio/foodweb/foodweb.htm}.
+#'   <http://vlado.fmf.uni-lj.si/pub/networks/data/bio/foodweb/foodweb.htm>.
 #' @keywords datasets
 NULL

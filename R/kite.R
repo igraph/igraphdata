@@ -14,14 +14,14 @@
 #' @usage
 #' kite
 #' @format
-#'   An undirected igraph graph with graph attributes \code{name},
-#'   \code{layout}, \code{Citation}, \code{Author}, \code{URL}, and vertex
-#'   attributes \code{label}, \code{name} and \code{Firstname}.
+#'   An undirected igraph graph with graph attributes `name`,
+#'   `layout`, `Citation`, `Author`, `URL`, and vertex
+#'   attributes `label`, `name` and `Firstname`.
 #' @references
 #'   Assessing the Political Landscape: Structure, Cognition, and Power in
-#'   Organizations. David Krackhardt. \emph{Admin. Sci. Quart.} 35, 342-369,
+#'   Organizations. David Krackhardt. *Admin. Sci. Quart.* 35, 342-369,
 #'   1990.
 #' @source
-#'   \url{http://www.orgnet.com/sna.html}
+#'   <http://www.orgnet.com/sna.html>
 #' @keywords datasets
 NULL

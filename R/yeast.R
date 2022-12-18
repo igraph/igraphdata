@@ -17,7 +17,7 @@
 #' @usage
 #' yeast
 #' @format
-#'   An undirected \code{igraph} graph object. Its graph attributes:
+#'   An undirected `igraph` graph object. Its graph attributes:
 #'   \sQuote{name}, \sQuote{Citation}, \sQuote{Author},
 #'   \sQuote{URL}. \sQuote{Classes}. The \sQuote{Classes}
 #'   attribute contain the key for the classification labels of the
@@ -54,13 +54,13 @@
 #'
 #'   Note that some proteins in the network did not appear in the
 #'   annotation files, the \sQuote{Class} and \sQuote{Description}
-#'   attributes are \code{NA} for these.
+#'   attributes are `NA` for these.
 #' @references
 #' Comparative assessment of large-scale data sets of protein-protein
 #'   interactions. Christian von Mering, Roland Krause, Berend Snel,
 #'   Michael Cornell, Stephen G. Oliver, Stanley Fields and Peer
-#'   Bork. \emph{Nature} 417, 399-403 (2002)
+#'   Bork. *Nature* 417, 399-403 (2002)
 #' @source The data was downloaded from
-#'   \url{http://www.nature.com/nature/journal/v417/n6887/suppinfo/nature750.html}.
+#'   <http://www.nature.com/nature/journal/v417/n6887/suppinfo/nature750.html>.
 #' @keywords datasets
 NULL

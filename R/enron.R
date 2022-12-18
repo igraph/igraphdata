@@ -11,12 +11,12 @@
 #' @usage
 #' enron
 #' @format
-#'   A directed \code{igraph} graph object.
+#'   A directed `igraph` graph object.
 #'
 #'   Graph attributes: \itemize{
 #'     \item \sQuote{LDC_names} The names of the 32 LDC catagories the emails
 #'     are classfied into by Michael W. Berry
-#'     (\url{http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf})
+#'     (<http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf>)
 #'     \item \sQuote{LDC_desc} Longer descriptions of the 32 LDC
 #'     categories.
 #'     \item \sQuote{Citation} Additionally, see also the references below.
@@ -42,7 +42,7 @@
 #'     message body.
 #'     \item \sQuote{LDC_topic} Assigned based on Michael W. Berry's 2001
 #'     \dQuote{Annotated (by Topic) Enron Email Data Set.}
-#'     (\url{http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf})
+#'     (<http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf>)
 #'     There are 32 topics. Topic "0" means an outlier, e.g., too few words
 #'     or all meaningless numbers in the message body, etc. Topic "-1"
 #'     means there is no matching topic.
@@ -85,5 +85,5 @@
 #'   Graphs using Fusion of Invariants, Computational and Mathematical
 #'   Organization Theory, submitted, 2010.
 #' @source
-#'   \url{http://www.cis.jhu.edu/~parky/Enron/}
+#'   <http://www.cis.jhu.edu/~parky/Enron/>
 NULL

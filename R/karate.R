@@ -44,7 +44,7 @@
 #' @usage
 #' karate
 #' @format
-#'   An undirected \code{igraph} graph object. Vertex no. 1 is Mr. Hi,
+#'   An undirected `igraph` graph object. Vertex no. 1 is Mr. Hi,
 #'   vertex no. 34 corresponds to John A.
 #'
 #'   Graph attributes: \sQuote{name}, \sQuote{Citation}, \sQuote{Author}.
@@ -55,7 +55,7 @@
 #'   Edge attribute: \sQuote{weight}.
 #' @references
 #'   Wayne W. Zachary. An Information Flow Model for Conflict and Fission
-#'   in Small Groups. \emph{Journal of Anthropological Research} Vol. 33,
+#'   in Small Groups. *Journal of Anthropological Research* Vol. 33,
 #'   No. 4 452-473
 #' @source
 #'   See reference below.

@@ -15,13 +15,13 @@
 #' @usage
 #' immuno
 #' @format
-#'   An undirected \code{igraph} graph object.
+#'   An undirected `igraph` graph object.
 #'
 #'   Graph attributes: \sQuote{name}, \sQuote{Citation}, \sQuote{Author}.
 #' @references
 #'   D. Gfeller, Simplifying complex networks: from a clustering to a
-#'   coarse graining strategy, \emph{PhD Thesis EPFL}, no 3888, 2007.
-#'   \url{http://library.epfl.ch/theses/?nr=3888}
+#'   coarse graining strategy, *PhD Thesis EPFL*, no 3888, 2007.
+#'   <http://library.epfl.ch/theses/?nr=3888>
 #' @source
 #'   See reference below.
 #' @keywords datasets

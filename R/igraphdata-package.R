@@ -6,7 +6,7 @@
 #' by accessing them directly.
 #'
 #' Get a list of data sets included in this package with
-#' \code{data(package = "igraphdata")}.
+#' `data(package = "igraphdata")`.
 
 
 ## usethis namespace: start
