@@ -14,5 +14,7 @@ BugReports: https://github.com/igraph/igraphdata/issues
 Depends:
     R (>= 2.10)
 Suggests:
-    igraph (>= 1.0.0)
+    igraph (>= 1.0.0),
+    testthat (>= 3.0.0)
 Encoding: UTF-8
+Config/testthat/edition: 3
