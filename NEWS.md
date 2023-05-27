@@ -1,10 +1,16 @@
 
-# 1.0.1
 
-First version with a NEWS file.
+# igraphdata 1.0.1.9000
 
-* Get rid of `R CMD check` warning for marked UTF-8 characters.
+- Internal changes only.
 
-# 1.0.0
 
-Last version without a NEWS file.
+# igraphdata 1.0.1
+
+- First version with a NEWS file.
+
+- Get rid of `R CMD check` warning for marked UTF-8 characters.
+
+# igraphdata 1.0.0
+
+- Last version without a NEWS file.
