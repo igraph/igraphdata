@@ -1,4 +1,10 @@
 
+
+# igraphdata 1.0.1.9000
+
+- Internal changes only.
+
+
 # igraphdata 1.0.1
 
 - First version with a NEWS file.
