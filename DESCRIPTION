@@ -16,3 +16,4 @@ Depends:
 Suggests:
     igraph (>= 1.0.0)
 Encoding: UTF-8
+RoxygenNote: 7.2.3
