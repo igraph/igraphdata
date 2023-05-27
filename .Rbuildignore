@@ -6,3 +6,4 @@
 ^inst/wikipedia$
 ^igraphdata\.Rproj$
 ^\.Rproj\.user$
+^\.github$
