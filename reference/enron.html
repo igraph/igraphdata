@@ -44,7 +44,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Enron Email Network</h1>
-    
+    <small class="dont-index">Source: <a href="https://github.com/igraph/igraphdata/blob/HEAD/R/enron.R" class="external-link"><code>R/enron.R</code></a></small>
     <div class="hidden name"><code>enron.Rd</code></div>
     </div>
 
@@ -60,31 +60,31 @@
     <h2>Format</h2>
     <p>A directed <code>igraph</code> graph object.</p>
 <p>Graph attributes:</p><ul><li><p>‘LDC_names’ The names of the 32 LDC catagories the emails
-    are classfied into by Michael W. Berry
-    (<a href="http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf" class="external-link">http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf</a>)</p></li>
+are classfied into by Michael W. Berry
+(<a href="http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf" class="external-link">http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf</a>)</p></li>
 <li><p>‘LDC_desc’ Longer descriptions of the 32 LDC
-    categories.</p></li>
+categories.</p></li>
 <li><p>‘Citation’ Additionally, see also the references below.</p></li>
 <li><p>‘name’</p></li>
 </ul><p>Vertex attributes:</p><ul><li><p>‘Email’ Email address.</p></li>
 <li><p>‘Name’ Real name.</p></li>
 <li><p>‘Note’ E.g. position at Enron.</p></li>
 </ul><p>Edge attributes:</p><ul><li><p>‘Time’ When the email was sent. Note that some time
-    labels are from 1979, these are certainly wrong and you might want
-    to remove them before analyses that include time.</p></li>
+labels are from 1979, these are certainly wrong and you might want
+to remove them before analyses that include time.</p></li>
 <li><p>‘Reciptype’ Recipient type, ‘to’, ‘cc’ or
-    ‘bcc’.</p></li>
+‘bcc’.</p></li>
 <li><p>‘Topic’ Assigned based on 3-means clustering of
-    randomly selected 3,120 out of all 125,409 messages, then NN
-    classification for the whole corpus. Note that topic 0 means an
-    outlier, e.g., too few words or all meaningless numbers in the
-    message body.</p></li>
+randomly selected 3,120 out of all 125,409 messages, then NN
+classification for the whole corpus. Note that topic 0 means an
+outlier, e.g., too few words or all meaningless numbers in the
+message body.</p></li>
 <li><p>‘LDC_topic’ Assigned based on Michael W. Berry's 2001
-    “Annotated (by Topic) Enron Email Data Set.”
-    (<a href="http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf" class="external-link">http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf</a>)
-    There are 32 topics. Topic "0" means an outlier, e.g., too few words
-    or all meaningless numbers in the message body, etc. Topic "-1"
-    means there is no matching topic.</p></li>
+“Annotated (by Topic) Enron Email Data Set.”
+(<a href="http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf" class="external-link">http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf</a>)
+There are 32 topics. Topic "0" means an outlier, e.g., too few words
+or all meaningless numbers in the message body, etc. Topic "-1"
+means there is no matching topic.</p></li>
 </ul></div>
     <div id="source">
     <h2>Source</h2>
@@ -93,33 +93,33 @@
     <div id="references">
     <h2>References</h2>
     <p>C.E. Priebe, J.M. Conroy, D.J. Marchette, and Y. Park,
-  Scan Statistics on Enron Graphs Computational and Mathematical
-  Organization Theory, Volume 11, Number 3, p229 - 247, October 2005,
-  Springer Science+Business Media B.V.</p>    
+Scan Statistics on Enron Graphs Computational and Mathematical
+Organization Theory, Volume 11, Number 3, p229 - 247, October 2005,
+Springer Science+Business Media B.V.</p>
 <p>C.E. Priebe, J.M. Conroy, D.J. Marchette, and Y. Park,
-  Scan Statistics on Enron Graphs, SIAM International Conference on
-  Data Mining, Workshop on Link Analysis, Counterterrorism and Security,
-  Newport Beach, California, April 23, 2005.</p>  
+Scan Statistics on Enron Graphs, SIAM International Conference on
+Data Mining, Workshop on Link Analysis, Counterterrorism and Security,
+Newport Beach, California, April 23, 2005.</p>
 <p>Gina Kolata, Enron Offers an Unlikely Boost to E-Mail Surveillance,
-  New York Times, Week in Review, May 22, 2005.</p>  
+New York Times, Week in Review, May 22, 2005.</p>
 <p>C.E. Priebe, Scan Statistics on Enron Graphs, IPAM Summer Graduate
-  School: Intelligent Extraction of Information from Graphs and High
-  Dimensional Data, UCLA, July 11-29, 2005.</p>  
+School: Intelligent Extraction of Information from Graphs and High
+Dimensional Data, UCLA, July 11-29, 2005.</p>
 <p>C.E. Priebe, Scan Statistics on Enron Graphs, 2005 Fall Department
-  of Applied Mathematics and Statistics Seminars, September 15, 2005,
-  The Johns Hopkins University.</p>
+of Applied Mathematics and Statistics Seminars, September 15, 2005,
+The Johns Hopkins University.</p>
 <p>Y. Park, C.E. Priebe, D.J. Marchette, Scan Statistics on Enron
-  Hypergraphs, Interface 2008, Durham, North Carolina, May 21, 2008,</p>  
+Hypergraphs, Interface 2008, Durham, North Carolina, May 21, 2008,</p>
 <p>Y. Park, C.E. Priebe, D.J. Marchette, Anomaly Detection using Scan
-  Statistics on Enron Graphs and Hypergraphs, The Satellite Workshop of
-  the IASC 2008 Conference, Seoul, Korea, December 1-3, 2008.</p>
+Statistics on Enron Graphs and Hypergraphs, The Satellite Workshop of
+the IASC 2008 Conference, Seoul, Korea, December 1-3, 2008.</p>
 <p>Y. Park, C.E. Priebe, D.J. Marchette, A. Youssef, Anomaly Detection
-  using Scan Statistics on Time Series of Hypergraphs, Workshop on Link
-  Analysis, Counterterrorism and Security at the SIAM International
-  Conference on Data Mining, Sparks, Nevada, May 1-3, 2009,</p>
+using Scan Statistics on Time Series of Hypergraphs, Workshop on Link
+Analysis, Counterterrorism and Security at the SIAM International
+Conference on Data Mining, Sparks, Nevada, May 1-3, 2009,</p>
 <p>Y. Park, C.E. Priebe, A. Youssef, Anomaly Detection in Time Series of
-  Graphs using Fusion of Invariants, Computational and Mathematical
-  Organization Theory, submitted, 2010.</p>
+Graphs using Fusion of Invariants, Computational and Mathematical
+Organization Theory, submitted, 2010.</p>
     </div>
 
   </div>

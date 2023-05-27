@@ -25,13 +25,13 @@
     <loc>/reference/USairports.html</loc>
   </url>
   <url>
-    <loc>/reference/aaa-igraphdata-package.html</loc>
-  </url>
-  <url>
     <loc>/reference/enron.html</loc>
   </url>
   <url>
     <loc>/reference/foodwebs.html</loc>
+  </url>
+  <url>
+    <loc>/reference/igraphdata-package.html</loc>
   </url>
   <url>
     <loc>/reference/immuno.html</loc>
