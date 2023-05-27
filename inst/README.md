@@ -1,8 +1,4 @@
 
-
-
-
-
 # Data sets for the igraph R package
 
 [![Linux build status](https://travis-ci.org/igraph/igraphdata.png)](https://travis-ci.org/igraph/igraphdata)
@@ -49,6 +45,7 @@ data(package = "igraphdata")
 #> karate                Zachary's karate club network
 #> kite                  Krackhardt's kite
 #> macaque               Visuotactile brain areas and connections
+#> rfid                  Hospital encounter network data
 #> yeast                 Yeast protein interaction network
 ```
 
