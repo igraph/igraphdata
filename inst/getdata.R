@@ -300,7 +300,7 @@ library(org.Sc.sgd.db)
 
 tmp <- tempdir()
 
-urls <- paste(sep="", "http://www.nature.com/nature/journal/v417/n6887/extref/nature750-s", 1:4, ".doc")
+urls <- paste(sep="", "https://static-content.springer.com/esm/art%3A10.1038%2Fnature750/MediaObjects/41586_2002_BFnature750_MOESM", 2:5, "_ESM.doc")
 dest <- paste(sep="", tmp, "/s", 1:4, ".txt")
 sapply(1:4, function(x) download.file(url=urls[x], destfile=dest[x]))
 
