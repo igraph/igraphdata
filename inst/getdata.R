@@ -2,7 +2,7 @@
 #   igraphdata R package
 #   Copyright (C) 2010-2012  Gabor Csardi <csardi.gabor@gmail.com>
 #   334 Harvard st, 02139 Cambridge, MA, USA
-#   
+#
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
 #   the Free Software Foundation; either version 2 of the License, or
@@ -12,7 +12,7 @@
 #   but WITHOUT ANY WARRANTY; without even the implied warranty of
 #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #   GNU General Public License for more details.
-#   
+#
 #   You should have received a copy of the GNU General Public License
 #   along with this program; if not, write to the Free Software
 #   Foundation, Inc.,  51 Franklin Street, Fifth Floor, Boston, MA
@@ -93,11 +93,11 @@ authors <- c("ChesLower", "Hagy, J.D.",
              "Ulanowicz, R. E., C. Bondavalli, J. J. Heymans, and M. S. Egnotovich",
              "mangwet",
              "Ulanowicz, R. E., C. Bondavalli, J. J. Heymans, and M. S. Egnotovich"
-             )                           
+             )
 
 Authors <- matrix(authors, nc=2, byrow=TRUE)
 
-citations <- 
+citations <-
 "ChesLower,ChesMiddle,ChesUpper| Hagy, J.D. (2002) Eutrophication, hypoxia
                    and trophic transfer efficiency in Chesapeake Bay PhD
                    Dissertation, University of Maryland at College
@@ -107,22 +107,22 @@ Chesapeake|        Baird D. & Ulanowicz R.E. (1989) The seasonal dynamics
                    59:329-364.
 CrystalC,CrystalD| Homer, M. and W.M. Kemp. Unpublished Ms. See also
                    Ulanowicz, R.E. 1986. Growth and Development:
-                   Ecosystems Phenomenology. Springer, New York. pp 69-79. 
+                   Ecosystems Phenomenology. Springer, New York. pp 69-79.
 Maspalomas|        Almunia, J., G. Basterretxea, J. Aristegui, and R.E.
                    Ulanowicz. (1999) Benthic- Pelagic switching in a coastal
                    subtropical lagoon. Estuarine, Coastal and Shelf
                    Science 49:363-384.
 Michigan|          Krause, A. and D. Mason. (In preparation.) A. Krause,
                    PhD. Dissertation, Michigan State University.
-                   Ann Arbor, MI. USA 
+                   Ann Arbor, MI. USA
 Mondego|           Patricio, J. (In Preparation) Master's Thesis.
-                   University of Coimbra, Coimbra, Portugal. 
+                   University of Coimbra, Coimbra, Portugal.
 Narragan|          Monaco, M.E. and R.E. Ulanowicz. (1997) Comparative
                    ecosystem trophic structure of three U.S. Mid-Atlantic
                    estuaries. Mar. Ecol. Prog. Ser. 161:239-254.
 Rhode|             Correll, D. (Unpublished manuscript) Smithsonian
                    Institute, Chesapeake Bay Center for Environmental
-                   Research, Edgewater, Maryland 21037-0028 USA. 
+                   Research, Edgewater, Maryland 21037-0028 USA.
 StMarks|           Baird, D., J. Luczkovich and R. R. Christian. (1998)
                    Assessment of spatial and temporal variability in
                    ecosystem attributes of the St Marks National Wildlife
@@ -205,7 +205,7 @@ for (n in names(foodwebs)) {
   foodwebs[[n]]$URL      <- url
   foodwebs[[n]]$name     <- Name[,2][match(n, Name[,1])]
 }
-  
+
 save(foodwebs, file="/tmp/foodwebs.rda")
 
 #####################################################################
