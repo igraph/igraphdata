@@ -10,5 +10,6 @@
 
 
 ## usethis namespace: start
+#' @importFrom igraph vcount
 ## usethis namespace: end
 NULL
