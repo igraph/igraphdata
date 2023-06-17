@@ -13,5 +13,5 @@ for (f in fs::dir_ls("data")) local({
   load(f)
   print(ls())
   assign(ls(), upgrade(get(ls())))
-  save(list = ls(), file = f)
+  save(list = ls(), file = f, compress = "xz", version = 2)
 })
