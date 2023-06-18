@@ -1,5 +1,14 @@
 
 
+# igraphdata 1.0.1.9003
+
+## Chore
+
+- Load igraph package when loading this package.
+
+- Compress as xz, in version 2.
+
+
 # igraphdata 1.0.1.9002
 
 ## Features
