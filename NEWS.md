@@ -1,5 +1,12 @@
 
 
+# igraphdata 1.0.1.9004
+
+## Chore
+
+- Update download link for yeast (#8, #9).
+
+
 # igraphdata 1.0.1.9003
 
 ## Chore
