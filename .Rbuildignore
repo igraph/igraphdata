@@ -1,9 +1,8 @@
 ^README.md$
 ^Makefile$
 ^tags$
-^appveyor.yml$
-^.travis.yml$
 ^inst/wikipedia$
 ^igraphdata\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
+^README\.Rmd$

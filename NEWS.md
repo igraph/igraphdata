@@ -1,5 +1,22 @@
 
 
+# igraphdata 1.0.1.9002
+
+## Features
+
+- Import igraph.
+
+- Upgrade graphs to igraph 1.5.0.
+
+## Chore
+
+- Igraph on CRAN now.
+
+- Turn off Travis and AppVeyor (#10).
+
+- Move README.\* to root.
+
+
 # igraphdata 1.0.1.9001
 
 ## Features

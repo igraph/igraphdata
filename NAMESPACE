@@ -3,3 +3,4 @@
 export(lesmis_gml)
 export(lesmis_graphml)
 export(lesmis_pajek)
+importFrom(igraph,vcount)
