@@ -1,5 +1,12 @@
 
 
+# igraphdata 1.0.1.9005
+
+## Chore
+
+- Change maintainer (#7).
+
+
 # igraphdata 1.0.1.9004
 
 ## Chore
