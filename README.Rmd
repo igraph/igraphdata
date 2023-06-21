@@ -22,8 +22,13 @@ options(pager = function(files, header, title, delete.file) {
 
 # Data sets for the igraph R package
 
-[![Linux build status](https://app.travis-ci.com/igraph/igraphdata.png)](https://app.travis-ci.com/igraph/igraphdata)
-[![Windows build status](https://ci.appveyor.com/api/projects/status/6wov9hh8oprrpkhs?svg=true)](https://ci.appveyor.com/project/gaborcsardi/igraphdata)
+<!-- badges: start -->
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![R build status](https://github.com/igraph/igraphdata/workflows/rcc/badge.svg)](https://github.com/igraph/igraphdata/actions)
+[![Codecov test coverage](https://codecov.io/gh/igraph/igraphdata/branch/main/graph/badge.svg)](https://app.codecov.io/gh/igraph/igraphdata?branch=main)
+[![CRAN status](https://www.r-pkg.org/badges/version/igraphdata)](https://CRAN.R-project.org/package=igraphdata)
+[![Launch rstudio.cloud](https://img.shields.io/badge/rstudio-cloud-blue.svg)](https://rstudio.cloud/project/523482)
+<!-- badges: end -->
 
 This is a data R package, that contains network data sets,
 to be used with the igraph R package.
