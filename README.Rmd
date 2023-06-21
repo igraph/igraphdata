@@ -22,7 +22,7 @@ options(pager = function(files, header, title, delete.file) {
 
 # Data sets for the igraph R package
 
-[![Linux build status](https://travis-ci.org/igraph/igraphdata.png)](https://travis-ci.org/igraph/igraphdata)
+[![Linux build status](https://app.travis-ci.com/igraph/igraphdata.png)](https://app.travis-ci.com/igraph/igraphdata)
 [![Windows build status](https://ci.appveyor.com/api/projects/status/6wov9hh8oprrpkhs?svg=true)](https://ci.appveyor.com/project/gaborcsardi/igraphdata)
 
 This is a data R package, that contains network data sets,
@@ -37,7 +37,7 @@ install.packages("igraphdata")
 ```
 
 You can install the development version from Github, using the
-[devtools package](https://github.com/hadley/devtools):
+[devtools package](https://github.com/r-lib/devtools):
 
 ```{r, eval = FALSE}
 devtools::install_github("igraph/igraphdata")
