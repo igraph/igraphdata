@@ -18,7 +18,7 @@
 #'
 #'   This dataset is licensed under a Creative Commons
 #'   Attribution-Share Alike 2.0 UK: England & Wales License,
-#'   see <http://creativecommons.org/licenses/by-sa/2.0/uk/> for details.
+#'   see <https://creativecommons.org/licenses/by-sa/2.0/uk/> for details.
 #'   Please cite the reference below if you use this dataset.
 #' @references Negyessy L., Nepusz T., Kocsis L., Bazso F.: Prediction of
 #'   the main cortical areas and connections involved in the tactile

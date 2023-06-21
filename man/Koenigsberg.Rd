@@ -15,7 +15,7 @@ This dataset is in the public domain.
 }
 \source{
 Wikipedia,
-\url{http://de.wikipedia.org/wiki/K\%C3\%B6nigsberger_Br\%C3\%BCcken}
+\url{https://de.wikipedia.org/wiki/K\%C3\%B6nigsberger_Br\%C3\%BCcken}
 }
 \usage{
 Koenigsberg

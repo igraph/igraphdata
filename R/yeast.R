@@ -61,6 +61,6 @@
 #'   Michael Cornell, Stephen G. Oliver, Stanley Fields and Peer
 #'   Bork. *Nature* 417, 399-403 (2002)
 #' @source The data was downloaded from
-#'   <http://www.nature.com/nature/journal/v417/n6887/suppinfo/nature750.html>.
+#'   <https://www.nature.com/articles/nature750>.
 #' @keywords datasets
 NULL

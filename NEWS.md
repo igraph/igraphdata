@@ -1,65 +1,26 @@
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
-
-# igraphdata 1.0.1.9005
-
-## Chore
-
-- Change maintainer (#7).
-
-
-# igraphdata 1.0.1.9004
-
-## Chore
-
-- Update download link for yeast (#8, #9).
-
-
-# igraphdata 1.0.1.9003
-
-## Chore
-
-- Load igraph package when loading this package.
-
-- Compress as xz, in version 2.
-
-
-# igraphdata 1.0.1.9002
+# igraphdata 1.0.2
 
 ## Features
 
-- Import igraph.
+- Import the igraph package, load it when loading igraphdata. This ensures that all graph objects print correctly just by loading igraphdata.
 
 - Upgrade graphs to igraph 1.5.0.
 
+- New `lesmis_*()` functions (#3).
+
 ## Chore
 
-- Igraph on CRAN now.
+- Kirill Müller is the new maintainer (#7).
+
+- Update download link for yeast (#8, #9).
 
 - Turn off Travis and AppVeyor (#10).
 
-- Move README.\* to root.
-
-
-# igraphdata 1.0.1.9001
-
-## Features
-
-- New `lesmis_*()` functions (@krlmlr, #3).
-
-## Chore
-
 - Add tests (#5).
 
-- Convert documentation to roxygen2 and Markdown (@krlmlr, #4).
-
-- Build-ignore.
-
-- README tweaks.
-
-
-# igraphdata 1.0.1.9000
-
-- Internal changes only.
+- Convert documentation to roxygen2 and Markdown (#4).
 
 
 # igraphdata 1.0.1

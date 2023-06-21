@@ -33,6 +33,6 @@
 #'
 #'   This dataset is in the public domain.
 #' @source Wikipedia,
-#'   <http://de.wikipedia.org/wiki/K%C3%B6nigsberger_Br%C3%BCcken>
+#'   <https://de.wikipedia.org/wiki/K%C3%B6nigsberger_Br%C3%BCcken>
 #' @keywords datasets
 NULL
