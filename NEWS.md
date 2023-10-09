@@ -1,5 +1,10 @@
 
 
+# igraphdata 1.0.1.9006
+
+- Internal changes only.
+
+
 # igraphdata 1.0.1.9005
 
 ## Chore
