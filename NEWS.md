@@ -1,5 +1,52 @@
 
 
+# igraphdata 1.0.1.9007
+
+## Chore
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/igraph/igraphdata/actions/runs/10425484116
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/igraph/igraphdata/actions/runs/10200109769
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/igraph/igraphdata/actions/runs/9728439599
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/igraph/igraphdata/actions/runs/9691615086
+
+## Continuous integration
+
+  - Install local package for pkgdown builds.
+
+  - Improve support for protected branches with fledge.
+
+  - Improve support for protected branches, without fledge.
+
+  - Sync with latest developments.
+
+  - Use v2 instead of master.
+
+  - Inline action.
+
+  - Use dev roxygen2 and decor.
+
+  - Fix on Windows, tweak lock workflow.
+
+  - Avoid checking bashisms on Windows.
+
+  - Better commit message.
+
+  - Bump versions, better default, consume custom matrix.
+
+  - Recent updates.
+
+
 # igraphdata 1.0.1.9006
 
 - Internal changes only.
