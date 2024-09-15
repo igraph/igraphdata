@@ -1,5 +1,16 @@
 
 
+# igraphdata 1.0.1.9008
+
+## Continuous integration
+
+  - Install via R CMD INSTALL ., not pak (#13).
+    
+      - ci: Install via R CMD INSTALL ., not pak
+    
+      - ci: Bump version of upload-artifact action
+
+
 # igraphdata 1.0.1.9007
 
 ## Chore
