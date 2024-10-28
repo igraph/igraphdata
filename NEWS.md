@@ -1,5 +1,18 @@
 
 
+# igraphdata 1.0.1.9009
+
+## Continuous integration
+
+  - Use pkgdown branch (#14).
+    
+      - ci: Use pkgdown branch
+    
+      - ci: Updates from duckdb
+    
+      - ci: Trigger run
+
+
 # igraphdata 1.0.1.9008
 
 ## Continuous integration
