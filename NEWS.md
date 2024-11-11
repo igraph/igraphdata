@@ -1,5 +1,16 @@
 
 
+# igraphdata 1.0.1.9010
+
+## Continuous integration
+
+  - Trigger run (#15).
+    
+      - ci: Trigger run
+    
+      - ci: Latest changes
+
+
 # igraphdata 1.0.1.9009
 
 ## Continuous integration
