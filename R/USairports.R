@@ -44,8 +44,7 @@
 #'   }
 #' @source
 #'   Most of this information was downloaded from The Research and
-#'   Innovative Technology Administration (RITA). See
-#'   <http://www.rita.dot.gov/about_rita/> for details. The airport
+#'   Innovative Technology Administration (RITA). The airport
 #'   position information was collected from Wikipedia and other public
 #'   online sources.
 #' @keywords datasets

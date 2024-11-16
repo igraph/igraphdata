@@ -1,6 +1,6 @@
 Package: igraphdata
 Title: A Collection of Network Data Sets for the 'igraph' Package
-Version: 1.0.1.9010
+Version: 1.0.2
 Authors@R: c(
     person("Gábor", "Csárdi", , role = "aut",
            comment = c(ORCID = "0000-0001-7098-9676")),
@@ -17,7 +17,7 @@ Description: A small collection of various network data sets, to use with
     Koenigsberg's bridges, visuotactile brain areas of the macaque monkey,
     UK faculty friendship network, domestic US flights network, etc.
 License: CC BY-SA 4.0 + file LICENSE
-URL: http://igraph.org
+URL: https://igraph.org/
 BugReports: https://github.com/igraph/igraphdata/issues
 Depends: 
     R (>= 2.10)
