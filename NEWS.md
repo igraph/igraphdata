@@ -1,5 +1,12 @@
 
 
+# igraphdata 1.0.1.9011
+
+## Continuous integration
+
+- Use stable pak (#17).
+
+
 # igraphdata 1.0.1.9010
 
 ## Continuous integration
