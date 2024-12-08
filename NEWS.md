@@ -1,5 +1,12 @@
 
 
+# igraphdata 1.0.1.9012
+
+## Continuous integration
+
+- Fetch tags for fledge workflow to avoid unnecessary NEWS entries (#18).
+
+
 # igraphdata 1.0.1.9011
 
 ## Continuous integration
