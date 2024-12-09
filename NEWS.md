@@ -1,5 +1,12 @@
 
 
+# igraphdata 1.0.1.9013
+
+## Continuous integration
+
+- Avoid failure in fledge workflow if no changes (#19).
+
+
 # igraphdata 1.0.1.9012
 
 ## Continuous integration
