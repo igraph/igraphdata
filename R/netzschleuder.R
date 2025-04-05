@@ -25,8 +25,13 @@ read_from_netzschleuder <- function(name, net = NULL) {
   node_file_name <- zip_contents$Name[grepl("node", zip_contents$Name)]
   meta_file_name <- zip_contents$Name[grepl("gprops", zip_contents$Name)]
 
-  edges_df <- utils::read.csv(unz(temp, edge_file_name)) + 1
-  names(edges_df)[c(1, 2)] <- c("from", "to")
+  edges_df <- utils::read.csv(unz(temp, edge_file_name))
+  source_loc <- grep("source", names(edges_df))
+  target_loc <- grep("target", names(edges_df))
+
+  edges_df[[source_loc]] <- edges_df[[source_loc]] + 1
+  edges_df[[target_loc]] <- edges_df[[target_loc]] + 1
+  names(edges_df)[c(source_loc, target_loc)] <- c("from", "to")
 
   nodes_df <- utils::read.csv(unz(temp, node_file_name))
   names(nodes_df)[1] <- "id"
