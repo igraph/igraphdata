@@ -3,9 +3,10 @@
 #' network datasets with the aim of aiding scientific research.
 #' @param name character. name of the network dataset.
 #' @param net character. If the dataset contains several networks this is the network name.
+#' @param token character. Some networks have restricted access and need a toke. See <https://networks.skewed.de/restricted>
 #' @return a named list containing an edge list and node attribute data frame and some metadata
 #' @export
-read_from_netzschleuder <- function(name, net = NULL) {
+read_from_netzschleuder <- function(name, net = NULL, token = NULL) {
   if (is.null(net)) {
     net <- name
   }
@@ -18,7 +19,11 @@ read_from_netzschleuder <- function(name, net = NULL) {
   )
 
   temp <- tempfile()
-  utils::download.file(zip_url, temp, quiet = TRUE) #TODO: add better error handling
+  headers <- NULL
+  if (!is.null(token)) {
+    headers <- c("WWW-Authenticate" = token)
+  }
+  utils::download.file(zip_url, temp, headers = headers, quiet = TRUE) #TODO: add better error handling
   zip_contents <- utils::unzip(temp, list = TRUE)
 
   edge_file_name <- zip_contents$Name[grepl("edge", zip_contents$Name)]

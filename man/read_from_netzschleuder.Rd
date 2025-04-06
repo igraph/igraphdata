@@ -6,12 +6,14 @@
 Netzschleuder (\url{https://networks.skewed.de/}) is a large online repository for
 network datasets with the aim of aiding scientific research.}
 \usage{
-read_from_netzschleuder(name, net = NULL)
+read_from_netzschleuder(name, net = NULL, token = NULL)
 }
 \arguments{
 \item{name}{character. name of the network dataset.}
 
 \item{net}{character. If the dataset contains several networks this is the network name.}
+
+\item{token}{character. Some networks have restricted access and need a toke. See \url{https://networks.skewed.de/restricted}}
 }
 \value{
 a named list containing an edge list and node attribute data frame and some metadata
