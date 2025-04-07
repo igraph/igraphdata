@@ -22,7 +22,8 @@ BugReports: https://github.com/igraph/igraphdata/issues
 Depends: 
     R (>= 2.10)
 Imports: 
-    igraph (>= 1.5.0)
+    igraph (>= 1.5.0),
+    minty
 Suggests: 
     testthat (>= 3.0.0)
 Encoding: UTF-8

@@ -30,7 +30,7 @@ read_from_netzschleuder <- function(name, net = NULL, token = NULL) {
   node_file_name <- zip_contents$Name[grepl("node", zip_contents$Name)]
   meta_file_name <- zip_contents$Name[grepl("gprops", zip_contents$Name)]
 
-  edges_df <- utils::read.csv(unz(temp, edge_file_name))
+  edges_df <- minty::type_convert(utils::read.csv(unz(temp, edge_file_name)))
   source_loc <- grep("source", names(edges_df))
   target_loc <- grep("target", names(edges_df))
 
@@ -38,7 +38,7 @@ read_from_netzschleuder <- function(name, net = NULL, token = NULL) {
   edges_df[[target_loc]] <- edges_df[[target_loc]] + 1
   names(edges_df)[c(source_loc, target_loc)] <- c("from", "to")
 
-  nodes_df <- utils::read.csv(unz(temp, node_file_name))
+  nodes_df <- minty::type_convert(utils::read.csv(unz(temp, node_file_name)))
   names(nodes_df)[1] <- "id"
   nodes_df$id <- nodes_df$id + 1
   if ("X_pos" %in% names(nodes_df)) {
