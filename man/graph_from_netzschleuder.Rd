@@ -4,14 +4,10 @@
 \alias{graph_from_netzschleuder}
 \title{Create a graph from the Netzschleuder data catalogue}
 \usage{
-graph_from_netzschleuder(name, directed = FALSE, bipartite = FALSE)
+graph_from_netzschleuder(name)
 }
 \arguments{
 \item{name}{character. name of the network dataset. To get a network from a collection, use \verb{<collection_name>/<network_name>}.}
-
-\item{directed}{logical. Whether a directed graph is constructed.}
-
-\item{bipartite}{logical. Whether a bipartite graph is constructed.}
 }
 \value{
 a new graph object.
