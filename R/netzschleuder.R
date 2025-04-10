@@ -36,13 +36,14 @@ download_file <- function(zip_url, token = NULL, file) {
 
 meta_from_netzschleuder <- function(net_ident, call = rlang::caller_env()) {
   url <- sprintf("https://networks.skewed.de/api/net/%s", net_ident[1])
+  collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[1])
   resp <- make_request(url)
   raw <- httr2::resp_body_json(resp)
   if (net_ident[1] == net_ident[2] && length(unlist(raw$nets)) > 1) {
     cli::cli_abort(
       c(
         "{net_ident[1]} is a collection and downloading a whole collection is not permitted.",
-        "i" = "see {.url https://networks.skewed.de/net/{net_ident[1]}}"
+        "i" = "see {.url {collection_url}}"
       ),
       call = call
     )
@@ -54,7 +55,7 @@ meta_from_netzschleuder <- function(net_ident, call = rlang::caller_env()) {
       cli::cli_abort(
         c(
           "{net_ident[2]} is not part of the collection {net_ident[1]}.",
-          "i" = "see {.url https://networks.skewed.de/net/{net_ident[1]}}"
+          "i" = "see {.url {colelction_url}}"
         ),
         call = call
       )
