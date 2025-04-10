@@ -4,12 +4,18 @@
 \alias{graph_from_netzschleuder}
 \title{Create a graph from the Netzschleuder data catalogue}
 \usage{
-graph_from_netzschleuder(name, net = NULL, directed = FALSE, bipartite = FALSE)
+graph_from_netzschleuder(
+  name,
+  ...,
+  network = NULL,
+  directed = FALSE,
+  bipartite = FALSE
+)
 }
 \arguments{
 \item{name}{character. name of the network dataset.}
 
-\item{net}{character. If the dataset contains several networks this is the network name.}
+\item{network}{character. If the dataset contains several networks this is the network name.}
 
 \item{directed}{logical. Whether a directed graph is constructed.}
 
