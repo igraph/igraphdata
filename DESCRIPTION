@@ -22,9 +22,11 @@ BugReports: https://github.com/igraph/igraphdata/issues
 Depends: 
     R (>= 4.0)
 Imports: 
+    cli,
     httr2,
     igraph (>= 2.0.0),
-    minty
+    minty,
+    rlang
 Suggests: 
     testthat (>= 3.0.0)
 Encoding: UTF-8
