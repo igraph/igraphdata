@@ -20,9 +20,10 @@ License: CC BY-SA 4.0 + file LICENSE
 URL: http://igraph.org
 BugReports: https://github.com/igraph/igraphdata/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 4.0)
 Imports: 
-    igraph (>= 1.5.0),
+    httr2,
+    igraph (>= 2.0.0),
     minty
 Suggests: 
     testthat (>= 3.0.0)

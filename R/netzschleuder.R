@@ -1,3 +1,34 @@
+download_file <- function(zip_url, token = NULL, file) {
+  req <- httr2::request(zip_url)
+  req <- httr2::req_throttle(req, capacity = 20, fill_time_s = 60)
+
+  if (!is.null(token)) {
+    req <- httr2::req_headers(req, `WWW-Authenticate` = token)
+  }
+
+  req <- httr2::req_user_agent(
+    req,
+    "R package igraphdata (github.com/igraph/igraphdata)"
+  )
+
+  resp <- httr2::req_perform(req)
+
+  if (httr2::resp_status(resp) != 200) {
+    stop("Failed to download file. Status: ", httr2::resp_status(resp))
+  }
+
+  if (!grepl("application/zip", httr2::resp_content_type(resp))) {
+    warning(
+      "Response does not look like a ZIP file (Content-Type: ",
+      httr2::resp_content_type(resp),
+      ")"
+    )
+  }
+
+  writeBin(httr2::resp_body_raw(resp), file)
+  invisible(NULL)
+}
+
 #' Download a graph from the Netzschleuder data catalogue
 #' Netzschleuder (<https://networks.skewed.de/>) is a large online repository for
 #' network datasets with the aim of aiding scientific research.
@@ -15,13 +46,9 @@ read_from_netzschleuder <- function(name, ..., network = NULL, token = NULL) {
     name,
     network
   )
+  temp <- tempfile(fileext = "zip")
+  download_file(zip_url, token = token, file = temp)
 
-  temp <- tempfile()
-  headers <- NULL
-  if (!is.null(token)) {
-    headers <- c("WWW-Authenticate" = token)
-  }
-  utils::download.file(zip_url, temp, headers = headers, quiet = TRUE) #TODO: add better error handling
   zip_contents <- utils::unzip(temp, list = TRUE)
 
   edge_file_name <- grep("edge", zip_contents$Name, value = TRUE)
