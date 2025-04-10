@@ -92,7 +92,7 @@ read_from_netzschleuder <- function(name, token = NULL) {
   gprops_file_name <- grep("gprops", zip_contents$Name, value = TRUE)
 
   edges_df_raw <- utils::read.csv(unz(temp, edge_file_name))
-  edges_df <- minty::type_convert(edges_df_raw)
+  edges_df <- suppressWarnings(minty::type_convert(edges_df_raw))
   source_loc <- grep("source", names(edges_df))
   target_loc <- grep("target", names(edges_df))
 
@@ -102,7 +102,7 @@ read_from_netzschleuder <- function(name, token = NULL) {
   names(edges_df)[c(source_loc, target_loc)] <- c("from", "to")
 
   nodes_df_raw <- utils::read.csv(unz(temp, node_file_name))
-  nodes_df <- minty::type_convert(nodes_df_raw)
+  nodes_df <- suppressWarnings(minty::type_convert(nodes_df_raw))
   names(nodes_df)[1] <- "id"
 
   # netzschleuder uses 0-indexing, igraph uses 1-indexing
