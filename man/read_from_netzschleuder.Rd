@@ -6,7 +6,7 @@
 Netzschleuder (\url{https://networks.skewed.de/}) is a large online repository for
 network datasets with the aim of aiding scientific research.}
 \usage{
-read_from_netzschleuder(name, net = NULL, token = NULL)
+read_from_netzschleuder(name, ..., net = NULL, token = NULL)
 }
 \arguments{
 \item{name}{character. name of the network dataset.}
