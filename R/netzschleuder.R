@@ -43,7 +43,7 @@ read_from_netzschleuder <- function(name, ..., network = NULL, token = NULL) {
   names(nodes_df)[1] <- "id"
 
   # netzschleuder uses 0-indexing, igraph uses 1-indexing
-  nodes_df[[id]] <- nodes_df[[id]] + 1
+  nodes_df[["id"]] <- nodes_df[["id"]] + 1
   if ("X_pos" %in% names(nodes_df)) {
     pos_array <- gsub("array\\(\\[|\\]|\\)", "", nodes_df[["X_pos"]])
     split_coords <- strsplit(pos_array, ",")
