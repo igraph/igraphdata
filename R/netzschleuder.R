@@ -6,7 +6,7 @@
 #' @param token character. Some networks have restricted access and need a toke. See <https://networks.skewed.de/restricted>
 #' @return a named list containing an edge list and node attribute data frame and some metadata
 #' @export
-read_from_netzschleuder <- function(name, net = NULL, token = NULL) {
+read_from_netzschleuder <- function(name, ..., net = NULL, token = NULL) {
   if (is.null(net)) {
     net <- name
   }
@@ -26,7 +26,7 @@ read_from_netzschleuder <- function(name, net = NULL, token = NULL) {
   utils::download.file(zip_url, temp, headers = headers, quiet = TRUE) #TODO: add better error handling
   zip_contents <- utils::unzip(temp, list = TRUE)
 
-  edge_file_name <- zip_contents$Name[grepl("edge", zip_contents$Name)]
+  edge_file_name <- grep("edge", zip_contents$Name, value = TRUE)
   node_file_name <- zip_contents$Name[grepl("node", zip_contents$Name)]
   meta_file_name <- zip_contents$Name[grepl("gprops", zip_contents$Name)]
 
@@ -54,6 +54,7 @@ read_from_netzschleuder <- function(name, net = NULL, token = NULL) {
   }
 
   meta_df <- utils::read.csv(unz(temp, meta_file_name))
+
   on.exit(unlink(temp))
 
   list(nodes = nodes_df, edges = edges_df, meta = meta_df)
@@ -81,10 +82,12 @@ graph_from_netzschleuder <- function(
     directed = directed,
     vertices = graph_data$nodes
   )
+
   if (bipartite) {
     types <- rep(FALSE, igraph::vcount(g))
     types[graph_data$nodes$id %in% graph_data$edges[, 1]] <- TRUE
     g <- igraph::set_vertex_attr(g, "type", value = types)
   }
+
   g
 }
