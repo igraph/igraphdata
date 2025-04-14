@@ -1,15 +1,13 @@
-make_request <- function(url, token = NULL) {
-  req <- httr2::request(url)
-  req <- httr2::req_throttle(req, capacity = 20, fill_time_s = 60)
+base_req <- httr2::request("https://networks.skewed.de") |>
+  httr2::req_throttle(capacity = 20, fill_time_s = 60) |>
+  httr2::req_user_agent("R package igraphdata (github.com/igraph/igraphdata)")
+
+make_request <- function(path, token = NULL) {
+  req <- httr2::req_url_path(base_req, path)
 
   if (!is.null(token)) {
     req <- httr2::req_headers(req, `WWW-Authenticate` = token)
   }
-
-  req <- httr2::req_user_agent(
-    req,
-    "R package igraphdata (github.com/igraph/igraphdata)"
-  )
 
   resp <- httr2::req_perform(req)
 
@@ -73,9 +71,9 @@ download_file <- function(zip_url, token = NULL, file) {
 #' @export
 ns_metadata <- function(name) {
   net_ident <- resolve_name(name)
-  url <- sprintf("https://networks.skewed.de/api/net/%s", net_ident[1])
+  path <- sprintf("api/net/%s", net_ident[1])
   collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[1])
-  resp <- make_request(url)
+  resp <- make_request(path)
   raw <- httr2::resp_body_json(resp)
   if (net_ident[1] == net_ident[2] && length(unlist(raw$nets)) > 1) {
     cli::cli_abort(
@@ -110,7 +108,7 @@ ns_df <- function(name, token = NULL) {
   net_ident <- resolve_name(name)
 
   zip_url <- sprintf(
-    "https://networks.skewed.de/net/%s/files/%s.csv.zip",
+    "net/%s/files/%s.csv.zip",
     net_ident[1],
     net_ident[2]
   )
