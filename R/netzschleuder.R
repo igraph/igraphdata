@@ -152,7 +152,10 @@ ns_df <- function(name, token = NULL) {
     nodes_df$y <- y_vals
   }
 
-  gprops_df <- utils::read.csv(unz(temp, gprops_file_name))
+  gprops_df <- tryCatch(
+    utils::read.csv(unz(temp, gprops_file_name)),
+    error = function(e) readLines(unz(temp, gprops_file_name))
+  )
 
   on.exit(unlink(temp))
 
@@ -161,8 +164,8 @@ ns_df <- function(name, token = NULL) {
 
 #' @rdname netzschleuder
 #' @export
-ns_graph <- function(name) {
-  graph_data <- ns_df(name)
+ns_graph <- function(name, token = NULL) {
+  graph_data <- ns_df(name, token = token)
   directed <- graph_data$meta[["analyses"]][["is_directed"]]
   bipartite <- graph_data$meta[["analyses"]][["is_bipartite"]]
 
