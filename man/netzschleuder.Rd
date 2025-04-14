@@ -6,7 +6,7 @@
 \alias{ns_graph}
 \title{Download and Convert Graph Data from Netzschleuder}
 \usage{
-ns_metadata(name, call = rlang::caller_env())
+ns_metadata(name)
 
 ns_df(name, token = NULL)
 

@@ -71,7 +71,7 @@ download_file <- function(zip_url, token = NULL, file) {
 #' @seealso <https://networks.skewed.de/>
 #' @rdname netzschleuder
 #' @export
-ns_metadata <- function(name, call = rlang::caller_env()) {
+ns_metadata <- function(name) {
   net_ident <- resolve_name(name)
   url <- sprintf("https://networks.skewed.de/api/net/%s", net_ident[1])
   collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[1])
@@ -82,8 +82,7 @@ ns_metadata <- function(name, call = rlang::caller_env()) {
       c(
         "{net_ident[1]} is a collection and downloading a whole collection is not permitted.",
         "i" = "see {.url {collection_url}}"
-      ),
-      call = call
+      )
     )
   } else if (net_ident[1] == net_ident[2]) {
     return(raw)
