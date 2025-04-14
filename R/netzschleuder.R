@@ -34,7 +34,45 @@ download_file <- function(zip_url, token = NULL, file) {
   invisible(NULL)
 }
 
-meta_from_netzschleuder <- function(net_ident, call = rlang::caller_env()) {
+#' Download and Convert Graph Data from Netzschleuder
+#'
+#' These functions provide tools to interact with the Netzschleuder network dataset archive.
+#' Netzschleuder (<https://networks.skewed.de/>) is a large online repository for network datasets,
+#' aimed at aiding scientific research.
+#' \describe{
+#'   \item{`ns_metadata()`}{ retrieves metadata about a network or network collection.}
+#'   \item{`ns_df()`}{downloads the graph data as data frames (nodes, edges, and graph properties).}
+#'   \item{`ns_graph()`}{creates an `igraph` object directly from Netzschleuder.}
+#' }
+#'
+#' @param name Character. The name of the network dataset. To get a network from a collection,
+#'   use the format `<collection_name>/<network_name>`.
+#' @param token Character. Some networks have restricted access and require a token.
+#'   See <https://networks.skewed.de/restricted>.
+#'
+#' @return
+#' \describe{
+#' \item{`ns_metadata()`}{A list containing metadata for the dataset.}
+#' \item{`ns_df()`}{A named list with `nodes`, `edges`, `gprops`, and `meta`.}
+#' \item{`ns_graph()`}{An `igraph` object.}
+#' }
+#' @examples
+#' \dontrun{
+#' # Get metadata
+#' ns_metadata("copenhagen/calls")
+#'
+#' # Download network as data frames
+#' graph_data <- ns_df("copenhagen/calls")
+#'
+#' # Create an igraph object
+#' g <- ns_graph("copenhagen/calls")
+#' }
+#'
+#' @seealso <https://networks.skewed.de/>
+#' @rdname netzschleuder
+#' @export
+ns_metadata <- function(name, call = rlang::caller_env()) {
+  net_ident <- resolve_name(name)
   url <- sprintf("https://networks.skewed.de/api/net/%s", net_ident[1])
   collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[1])
   resp <- make_request(url)
@@ -55,7 +93,7 @@ meta_from_netzschleuder <- function(net_ident, call = rlang::caller_env()) {
       cli::cli_abort(
         c(
           "{net_ident[2]} is not part of the collection {net_ident[1]}.",
-          "i" = "see {.url {colelction_url}}"
+          "i" = "see {.url {collection_url}}"
         ),
         call = call
       )
@@ -66,16 +104,11 @@ meta_from_netzschleuder <- function(net_ident, call = rlang::caller_env()) {
   }
 }
 
-#' Download a graph from the Netzschleuder data catalogue
-#' Netzschleuder (<https://networks.skewed.de/>) is a large online repository for
-#' network datasets with the aim of aiding scientific research.
-#' @param name character. name of the network dataset. To get a network from a collection, use `<collection_name>/<network_name>`.
-#' @param token character. Some networks have restricted access and need a toke. See <https://networks.skewed.de/restricted>
-#' @return a named list containing an edge list and node attribute data frame and some metadata
+#' @rdname netzschleuder
 #' @export
-read_from_netzschleuder <- function(name, token = NULL) {
+ns_df <- function(name, token = NULL) {
+  meta <- ns_metadata(name)
   net_ident <- resolve_name(name)
-  meta <- meta_from_netzschleuder(net_ident)
 
   zip_url <- sprintf(
     "https://networks.skewed.de/net/%s/files/%s.csv.zip",
@@ -127,17 +160,10 @@ read_from_netzschleuder <- function(name, token = NULL) {
   list(nodes = nodes_df, edges = edges_df, gprops = gprops_df, meta = meta)
 }
 
-#' Create a graph from the Netzschleuder data catalogue
-#'
-#' Netzschleuder (<https://networks.skewed.de/>) is a large online repository for
-#' network datasets with the aim of aiding scientific research.
-#' @inheritParams read_from_netzschleuder
-#' @return a new graph object.
+#' @rdname netzschleuder
 #' @export
-graph_from_netzschleuder <- function(
-  name
-) {
-  graph_data <- read_from_netzschleuder(name)
+ns_graph <- function(name) {
+  graph_data <- ns_df(name)
   directed <- graph_data$meta[["analyses"]][["is_directed"]]
   bipartite <- graph_data$meta[["analyses"]][["is_bipartite"]]
 
