@@ -10,7 +10,7 @@ ns_metadata(name)
 
 ns_df(name, token = NULL)
 
-ns_graph(name)
+ns_graph(name, token = NULL)
 }
 \arguments{
 \item{name}{Character. The name of the network dataset. To get a network from a collection,
