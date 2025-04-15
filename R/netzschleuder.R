@@ -1,9 +1,9 @@
-base_req <- httr2::request("https://networks.skewed.de") |>
-  httr2::req_throttle(capacity = 20, fill_time_s = 60) |>
-  httr2::req_user_agent("R package igraphdata (github.com/igraph/igraphdata)")
+get_base_req <- function() {
+  .pkg_env$base_req
+}
 
 make_request <- function(path, token = NULL) {
-  req <- httr2::req_url_path(base_req, path)
+  req <- httr2::req_url_path(get_base_req(), path)
 
   if (!is.null(token)) {
     req <- httr2::req_headers(req, `WWW-Authenticate` = token)
