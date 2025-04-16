@@ -9,13 +9,16 @@ Authors@R: c(
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),
     person("Maëlle", "Salmon", role = "ctb"),
+    person("David","Schoch", role = "ctb",
+           comment = c(ORCID="0000-0003-2952-4812")),
     person("Chan Zuckerberg Initiative", role = "fnd")
   )
 Description: A small collection of various network data sets, to use with
     the 'igraph' package: the Enron email network, various food webs,
     interactions in the immunoglobulin protein, the karate club network,
     Koenigsberg's bridges, visuotactile brain areas of the macaque monkey,
-    UK faculty friendship network, domestic US flights network, etc.
+    UK faculty friendship network, domestic US flights network, etc. Also provides
+    access to the API of <https://networks.skewed.de/>.
 License: CC BY-SA 4.0 + file LICENSE
 URL: http://igraph.org
 BugReports: https://github.com/igraph/igraphdata/issues
