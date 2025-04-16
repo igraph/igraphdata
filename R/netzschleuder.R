@@ -133,6 +133,7 @@ ns_df <- function(name, token = NULL) {
   names(edges_df)[c(source_loc, target_loc)] <- c("from", "to")
 
   nodes_df_raw <- utils::read.csv(unz(temp, node_file_name))
+  #suppress warning if no character columns found
   nodes_df <- suppressWarnings(minty::type_convert(nodes_df_raw))
   names(nodes_df)[1] <- "id"
 
@@ -150,6 +151,7 @@ ns_df <- function(name, token = NULL) {
     nodes_df$y <- y_vals
   }
 
+  #gprops file is not always a valid csv file. In that case, simply read it as text
   gprops_df <- tryCatch(
     utils::read.csv(unz(temp, gprops_file_name)),
     error = function(e) readLines(unz(temp, gprops_file_name))
