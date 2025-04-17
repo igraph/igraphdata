@@ -22,6 +22,7 @@ Useful links:
 Authors:
 \itemize{
   \item Gábor Csárdi (\href{https://orcid.org/0000-0001-7098-9676}{ORCID})
+  \item David Schoch (\href{https://orcid.org/0000-0003-2952-4812}{ORCID})
 }
 
 Other contributors:

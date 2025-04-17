@@ -70,6 +70,11 @@ download_file <- function(zip_url, token = NULL, file) {
 #' @rdname netzschleuder
 #' @export
 ns_metadata <- function(name) {
+  if (!requireNamespace("minty", quietly = TRUE)) {
+    cli::cli_abort(
+      "The package `minty` is needed for this function. Please install it."
+    )
+  }
   net_ident <- resolve_name(name)
   path <- sprintf("api/net/%s", net_ident[1])
   collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[1])
@@ -143,19 +148,24 @@ ns_df <- function(name, token = NULL) {
     pos_array <- gsub("array\\(\\[|\\]|\\)", "", nodes_df[["X_pos"]])
     split_coords <- strsplit(pos_array, ",")
 
-    x_vals <- sapply(split_coords, function(x) as.numeric(trimws(x[1])))
-    y_vals <- sapply(split_coords, function(x) as.numeric(trimws(x[2])))
+    x_vals <- vapply(
+      split_coords,
+      function(x) as.numeric(trimws(x[1])),
+      numeric(1)
+    )
+    y_vals <- vapply(
+      split_coords,
+      function(x) as.numeric(trimws(x[2])),
+      numeric(1)
+    )
 
     nodes_df[["X_pos"]] <- NULL
-    nodes_df$x <- x_vals
-    nodes_df$y <- y_vals
+    nodes_df[["x"]] <- x_vals
+    nodes_df[["y"]] <- y_vals
   }
 
   #gprops file is not always a valid csv file. In that case, simply read it as text
-  gprops_df <- tryCatch(
-    utils::read.csv(unz(temp, gprops_file_name)),
-    error = function(e) readLines(unz(temp, gprops_file_name))
-  )
+  gprops_df <- readLines(unz(temp, gprops_file_name))
 
   on.exit(unlink(temp))
 

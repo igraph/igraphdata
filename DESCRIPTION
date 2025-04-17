@@ -9,7 +9,7 @@ Authors@R: c(
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),
     person("Maëlle", "Salmon", role = "ctb"),
-    person("David","Schoch", role = "ctb",
+    person("David","Schoch", role = "aut",
            comment = c(ORCID="0000-0003-2952-4812")),
     person("Chan Zuckerberg Initiative", role = "fnd")
   )
@@ -28,8 +28,9 @@ Imports:
     cli,
     httr2,
     igraph (>= 2.0.0),
-    minty
+    withr
 Suggests: 
+    minty,
     testthat (>= 3.0.0)
 Encoding: UTF-8
 LazyData: true
