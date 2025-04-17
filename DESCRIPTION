@@ -27,8 +27,7 @@ Depends:
 Imports: 
     cli,
     httr2,
-    igraph (>= 2.0.0),
-    withr
+    igraph (>= 2.0.0)
 Suggests: 
     minty,
     testthat (>= 3.0.0)

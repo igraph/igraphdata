@@ -19,8 +19,19 @@ make_request <- function(path, token = NULL) {
 }
 
 resolve_name <- function(x) {
+  #remove trailing /
+  x <- sub("/$", "", x)
+  #remove double slash
+  x <- sub("//", "/", x)
+
   if (grepl("/", x)) {
-    return(strsplit(x, "/", fixed = TRUE)[[1]])
+    x_split <- strsplit(x, "/", fixed = TRUE)[[1]]
+    if (length(x_split) > 2) {
+      cli::cli_abort(
+        "{.arg name} has {length(x_split)} components instead of 2."
+      )
+    }
+    return(x_split)
   } else {
     c(x, x)
   }
@@ -91,8 +102,7 @@ ns_metadata <- function(name) {
         c(
           "{net_ident[2]} is not part of the collection {net_ident[1]}.",
           "i" = "see {.url {collection_url}}"
-        ),
-        call = call
+        )
       )
     }
     raw[["analyses"]] <- raw[["analyses"]][[net_ident[2]]]
