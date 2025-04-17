@@ -29,7 +29,6 @@ Other contributors:
 \itemize{
   \item Szabolcs Horvát (\href{https://orcid.org/0000-0002-3100-523X}{ORCID}) [contributor]
   \item Maëlle Salmon [contributor]
-  \item David Schoch (\href{https://orcid.org/0000-0003-2952-4812}{ORCID}) [contributor]
   \item Chan Zuckerberg Initiative [funder]
 }
 
