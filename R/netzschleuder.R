@@ -70,11 +70,6 @@ download_file <- function(zip_url, token = NULL, file) {
 #' @rdname netzschleuder
 #' @export
 ns_metadata <- function(name) {
-  if (!requireNamespace("minty", quietly = TRUE)) {
-    cli::cli_abort(
-      "The package `minty` is needed for this function. Please install it."
-    )
-  }
   net_ident <- resolve_name(name)
   path <- sprintf("api/net/%s", net_ident[1])
   collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[1])
@@ -109,6 +104,11 @@ ns_metadata <- function(name) {
 #' @rdname netzschleuder
 #' @export
 ns_df <- function(name, token = NULL) {
+  if (!requireNamespace("minty", quietly = TRUE)) {
+    cli::cli_abort(
+      "The package `minty` is needed for this function. Please install it."
+    )
+  }
   meta <- ns_metadata(name)
   net_ident <- resolve_name(name)
 
