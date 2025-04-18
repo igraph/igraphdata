@@ -150,11 +150,11 @@ ns_df <- function(name, token = NULL) {
   edges_df <- suppressWarnings(minty::type_convert(edges_df_raw))
   source_loc <- grep("source", names(edges_df))
   target_loc <- grep("target", names(edges_df))
+  names(edges_df)[c(source_loc, target_loc)] <- c("from", "to")
 
   # netzschleuder uses 0-indexing, igraph uses 1-indexing
-  edges_df[[source_loc]] <- edges_df[[source_loc]] + 1
-  edges_df[[target_loc]] <- edges_df[[target_loc]] + 1
-  names(edges_df)[c(source_loc, target_loc)] <- c("from", "to")
+  edges_df[["from"]] <- edges_df[["from"]] + 1
+  edges_df[["to"]] <- edges_df[["to"]] + 1
 
   nodes_df_raw <- utils::read.csv(unz(temp, node_file_name))
   #suppress warning if no character columns found
@@ -164,26 +164,16 @@ ns_df <- function(name, token = NULL) {
   # netzschleuder uses 0-indexing, igraph uses 1-indexing
   nodes_df[["id"]] <- nodes_df[["id"]] + 1
   if ("X_pos" %in% names(nodes_df)) {
-    pos_array <- gsub("array\\(\\[|\\]|\\)", "", nodes_df[["X_pos"]])
-    split_coords <- strsplit(pos_array, ",")
+    regex <- gregexpr("-?\\d+\\.\\d+", nodes_df[["X_pos"]])
+    matches <- regmatches(nodes_df[["X_pos"]], regex)
 
-    x_vals <- vapply(
-      split_coords,
-      function(x) as.numeric(trimws(x[1])),
-      numeric(1)
-    )
-    y_vals <- vapply(
-      split_coords,
-      function(x) as.numeric(trimws(x[2])),
-      numeric(1)
-    )
+    mat <- vapply(matches, as.numeric, numeric(2))
 
     nodes_df[["X_pos"]] <- NULL
-    nodes_df[["x"]] <- x_vals
-    nodes_df[["y"]] <- y_vals
+    nodes_df[["x"]] <- mat[1, ]
+    nodes_df[["y"]] <- mat[2, ]
   }
 
-  #gprops file is not always a valid csv file. In that case, simply read it as text
   gprops_df <- readLines(unz(temp, gprops_file_name))
 
   on.exit(unlink(temp))
