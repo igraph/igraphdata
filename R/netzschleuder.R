@@ -1,8 +1,20 @@
+#' @keywords internal
+.pkg_env <- new.env(parent = emptyenv())
+
 get_base_req <- function() {
+  if (!exists("base_req", envir = .pkg_env, inherits = FALSE)) {
+    base_req <- httr2::request("https://networks.skewed.de") |>
+      httr2::req_throttle(capacity = 20, fill_time_s = 60) |>
+      httr2::req_user_agent(
+        "R package igraphdata (github.com/igraph/igraphdata)"
+      )
+    .pkg_env$base_req <- base_req
+  }
   .pkg_env$base_req
 }
 
 make_request <- function(path, token = NULL) {
+  rlang::check_installed("httr2")
   req <- httr2::req_url_path(get_base_req(), path)
 
   if (!is.null(token)) {
@@ -81,6 +93,7 @@ download_file <- function(zip_url, token = NULL, file) {
 #' @rdname netzschleuder
 #' @export
 ns_metadata <- function(name) {
+  rlang::check_installed("cli")
   net_ident <- resolve_name(name)
   path <- sprintf("api/net/%s", net_ident[1])
   collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[1])
@@ -114,11 +127,7 @@ ns_metadata <- function(name) {
 #' @rdname netzschleuder
 #' @export
 ns_df <- function(name, token = NULL) {
-  if (!requireNamespace("minty", quietly = TRUE)) {
-    cli::cli_abort(
-      "The package `minty` is needed for this function. Please install it."
-    )
-  }
+  rlang::check_installed("minty")
   meta <- ns_metadata(name)
   net_ident <- resolve_name(name)
 
