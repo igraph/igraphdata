@@ -95,30 +95,30 @@ download_file <- function(zip_url, token = NULL, file) {
 ns_metadata <- function(name) {
   rlang::check_installed("cli")
   net_ident <- resolve_name(name)
-  path <- sprintf("api/net/%s", net_ident[1])
-  collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[1])
+  path <- sprintf("api/net/%s", net_ident[[1]])
+  collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[[1]])
   resp <- make_request(path)
   raw <- httr2::resp_body_json(resp)
-  if (net_ident[1] == net_ident[2] && length(unlist(raw$nets)) > 1) {
+  if (net_ident[[1]] == net_ident[[2]] && length(unlist(raw$nets)) > 1) {
     cli::cli_abort(
       c(
-        "{net_ident[1]} is a collection and downloading a whole collection is not permitted.",
+        "{net_ident[[1]]} is a collection and downloading a whole collection is not permitted.",
         "i" = "see {.url {collection_url}}"
       )
     )
-  } else if (net_ident[1] == net_ident[2]) {
+  } else if (net_ident[[1]] == net_ident[[2]]) {
     return(raw)
   } else {
-    idx <- which(unlist(raw[["nets"]]) == net_ident[2])
+    idx <- which(unlist(raw[["nets"]]) == net_ident[[2]])
     if (length(idx) == 0) {
       cli::cli_abort(
         c(
-          "{net_ident[2]} is not part of the collection {net_ident[1]}.",
+          "{net_ident[[2]]} is not part of the collection {net_ident[[1]]}.",
           "i" = "see {.url {collection_url}}"
         )
       )
     }
-    raw[["analyses"]] <- raw[["analyses"]][[net_ident[2]]]
+    raw[["analyses"]] <- raw[["analyses"]][[net_ident[[2]]]]
     raw[["nets"]] <- raw[["nets"]][idx]
     raw
   }
@@ -133,8 +133,8 @@ ns_df <- function(name, token = NULL) {
 
   zip_url <- sprintf(
     "net/%s/files/%s.csv.zip",
-    net_ident[1],
-    net_ident[2]
+    net_ident[[1]],
+    net_ident[[2]]
   )
 
   temp <- tempfile(fileext = "zip")
@@ -153,8 +153,8 @@ ns_df <- function(name, token = NULL) {
   names(edges_df)[c(source_loc, target_loc)] <- c("from", "to")
 
   # netzschleuder uses 0-indexing, igraph uses 1-indexing
-  edges_df[["from"]] <- edges_df[["from"]] + 1
-  edges_df[["to"]] <- edges_df[["to"]] + 1
+  edges_df[["from"]] <- edges_df[["from"]] + 1L
+  edges_df[["to"]] <- edges_df[["to"]] + 1L
 
   nodes_df_raw <- utils::read.csv(unz(temp, node_file_name))
   #suppress warning if no character columns found
@@ -162,7 +162,7 @@ ns_df <- function(name, token = NULL) {
   names(nodes_df)[1] <- "id"
 
   # netzschleuder uses 0-indexing, igraph uses 1-indexing
-  nodes_df[["id"]] <- nodes_df[["id"]] + 1
+  nodes_df[["id"]] <- nodes_df[["id"]] + 1L
   if ("X_pos" %in% names(nodes_df)) {
     regex <- gregexpr("-?\\d+\\.\\d+", nodes_df[["X_pos"]])
     matches <- regmatches(nodes_df[["X_pos"]], regex)
@@ -196,7 +196,7 @@ ns_graph <- function(name, token = NULL) {
 
   if (bipartite) {
     types <- rep(FALSE, igraph::vcount(g))
-    types[graph_data$nodes$id %in% graph_data$edges[, 1]] <- TRUE
+    types[graph_data$nodes$id %in% graph_data$edges[[1]]] <- TRUE
     g <- igraph::set_vertex_attr(g, "type", value = types)
   }
 
