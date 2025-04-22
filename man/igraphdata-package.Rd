@@ -27,7 +27,7 @@ Authors:
 Other contributors:
 \itemize{
   \item Szabolcs Horvát (\href{https://orcid.org/0000-0002-3100-523X}{ORCID}) [contributor]
-  \item Maëlle Salmon [contributor]
+  \item Maëlle Salmon (\href{https://orcid.org/0000-0002-2815-0399}{ORCID}) [contributor]
   \item Chan Zuckerberg Initiative [funder]
 }
 
