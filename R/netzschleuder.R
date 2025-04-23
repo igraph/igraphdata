@@ -13,10 +13,13 @@ get_base_req <- function() {
   .pkg_env$base_req
 }
 
-make_request <- function(path, token = NULL) {
+make_request <- function(path, token = NULL, method = "GET") {
   rlang::check_installed("httr2")
   req <- httr2::req_url_path(get_base_req(), path)
-
+  req <- httr2::req_method(req, method)
+  if (method == "HEAD") {
+    req <- httr2::req_headers(req, `Accept-Encoding` = "identity")
+  }
   if (!is.null(token)) {
     req <- httr2::req_headers(req, `WWW-Authenticate` = token)
   }
@@ -49,8 +52,17 @@ resolve_name <- function(x) {
   }
 }
 
-download_file <- function(zip_url, token = NULL, file) {
-  resp <- make_request(zip_url, token)
+download_file <- function(zip_url, token = NULL, file, size_limit) {
+  resp <- make_request(zip_url, token, method = "HEAD")
+  byte_size <- as.numeric(httr2::resp_headers(resp)[["content-length"]])
+  gb_size <- round(byte_size / 1024^3, 4)
+  if (gb_size > size_limit) {
+    cli::cli_abort(c(
+      "{zip_url} has a size of {gb_size} GB and exceeds the size limit of {size_limit} GB.",
+      "i" = "To download the file, set {.arg size_limit} to a value greater than {gb_size}"
+    ))
+  }
+  resp <- make_request(zip_url, token, method = "GET")
   writeBin(httr2::resp_body_raw(resp), file)
   invisible(NULL)
 }
@@ -70,6 +82,7 @@ download_file <- function(zip_url, token = NULL, file) {
 #'   use the format `<collection_name>/<network_name>`.
 #' @param collection Logical. If TRUE, get the metadata of a whole collection of networks.
 #' @param token Character. Some networks have restricted access and require a token.
+#' @param size_limit Numeric. Maximum allowed file size in GB. Larger files will be prevented from being downloaded.
 #'   See <https://networks.skewed.de/restricted>.
 #'
 #' @return
@@ -136,7 +149,7 @@ ns_metadata <- function(name, collection = FALSE) {
 
 #' @rdname netzschleuder
 #' @export
-ns_df <- function(name, token = NULL) {
+ns_df <- function(name, token = NULL, size_limit = 1) {
   rlang::check_installed("minty")
   if (is.character(name)) {
     meta <- ns_metadata(name, collection = FALSE)
@@ -161,7 +174,7 @@ ns_df <- function(name, token = NULL) {
   )
 
   temp <- tempfile(fileext = "zip")
-  download_file(zip_url, token = token, file = temp)
+  download_file(zip_url, token = token, file = temp, size_limit = size_limit)
 
   zip_contents <- utils::unzip(temp, list = TRUE)
 
@@ -206,8 +219,8 @@ ns_df <- function(name, token = NULL) {
 
 #' @rdname netzschleuder
 #' @export
-ns_graph <- function(name, token = NULL) {
-  graph_data <- ns_df(name, token = token)
+ns_graph <- function(name, token = NULL, size_limit = 1) {
+  graph_data <- ns_df(name, token = token, size_limit = size_limit)
   directed <- graph_data$meta[["analyses"]][["is_directed"]]
   bipartite <- graph_data$meta[["analyses"]][["is_bipartite"]]
 
