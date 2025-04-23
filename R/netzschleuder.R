@@ -68,6 +68,7 @@ download_file <- function(zip_url, token = NULL, file) {
 #'
 #' @param name Character. The name of the network dataset. To get a network from a collection,
 #'   use the format `<collection_name>/<network_name>`.
+#' @param collection Logical. If TRUE, get the metadata of a whole collection of networks.
 #' @param token Character. Some networks have restricted access and require a token.
 #'   See <https://networks.skewed.de/restricted>.
 #'
@@ -92,14 +93,23 @@ download_file <- function(zip_url, token = NULL, file) {
 #' @seealso <https://networks.skewed.de/>
 #' @rdname netzschleuder
 #' @export
-ns_metadata <- function(name) {
+ns_metadata <- function(name, collection = FALSE) {
   rlang::check_installed("cli")
   net_ident <- resolve_name(name)
   path <- sprintf("api/net/%s", net_ident[[1]])
   collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[[1]])
   resp <- make_request(path)
   raw <- httr2::resp_body_json(resp)
-  if (net_ident[[1]] == net_ident[[2]] && length(unlist(raw$nets)) > 1) {
+  class(raw) <- c("ns_meta", class(raw))
+  raw[["is_collection"]] <- collection
+  raw[["collection_name"]] <- net_ident[[1]]
+  if (collection) {
+    return(raw)
+  } else if (
+    net_ident[[1]] == net_ident[[2]] &&
+      length(unlist(raw$nets)) > 1 &&
+      !collection
+  ) {
     cli::cli_abort(
       c(
         "{net_ident[[1]]} is a collection and downloading a whole collection is not permitted.",
@@ -128,8 +138,21 @@ ns_metadata <- function(name) {
 #' @export
 ns_df <- function(name, token = NULL) {
   rlang::check_installed("minty")
-  meta <- ns_metadata(name)
-  net_ident <- resolve_name(name)
+  if (is.character(name)) {
+    meta <- ns_metadata(name, collection = FALSE)
+    net_ident <- resolve_name(name)
+  } else if (inherits(name, "ns_meta")) {
+    if (name[["is_collection"]]) {
+      cli::cli_abort(c(
+        "{.arg name} contains the meta data of a whole collection and downloading a whole collection is not permitted.",
+        "i" = "set collection = FALSE in `ns_metadata()`"
+      ))
+    }
+    meta <- name
+    net_ident <- c(meta[["collection_name"]], meta[["nets"]])
+  } else {
+    cli::cli_abort("{.arg name} must be a string or a `ns_meta` object.")
+  }
 
   zip_url <- sprintf(
     "net/%s/files/%s.csv.zip",
