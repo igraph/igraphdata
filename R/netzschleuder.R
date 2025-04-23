@@ -238,3 +238,27 @@ ns_graph <- function(name, token = NULL, size_limit = 1) {
 
   g
 }
+
+#' @export
+print.ns_meta <- function(x, ...) {
+  if (x[["is_collection"]]) {
+    cat("Netzschleuder Metadata for the collection:", x[["collection_name"]])
+    cat("Number of Networks:", length(x[["nets"]]))
+  } else {
+    cat(
+      "Netzschleuder Metadata for: ",
+      x[["collection_name"]],
+      "/",
+      x[["nets"]][[1]],
+      sep = ""
+    )
+    cat("\n")
+    cat("Number of vertices:", x$analyses$num_vertices)
+    cat("\n")
+    cat("Number of Edges:", x$analyses$num_edges)
+    cat("\n")
+    cat("Directed:", x$analyses$is_directed)
+    cat("\n")
+    cat("Bipartite:", x$analyses$is_bipartite)
+  }
+}
