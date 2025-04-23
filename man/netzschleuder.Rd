@@ -6,7 +6,7 @@
 \alias{ns_graph}
 \title{Download and Convert Graph Data from Netzschleuder}
 \usage{
-ns_metadata(name)
+ns_metadata(name, collection = FALSE)
 
 ns_df(name, token = NULL)
 
@@ -15,6 +15,8 @@ ns_graph(name, token = NULL)
 \arguments{
 \item{name}{Character. The name of the network dataset. To get a network from a collection,
 use the format \verb{<collection_name>/<network_name>}.}
+
+\item{collection}{Logical. If TRUE, get the metadata of a whole collection of networks.}
 
 \item{token}{Character. Some networks have restricted access and require a token.
 See \url{https://networks.skewed.de/restricted}.}
