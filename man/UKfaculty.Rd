@@ -31,5 +31,6 @@ community detection algorithms.
 Nepusz T., Petroczi A., Negyessy L., Bazso F.: Fuzzy
 communities and the concept of bridgeness in complex
 networks. Physical Review E 77:016107, 2008.
+\doi{10.1103/PhysRevE.77.016107}
 }
 \keyword{datasets}
