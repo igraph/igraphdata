@@ -21,7 +21,7 @@
 #' @references
 #'   D. Gfeller, Simplifying complex networks: from a clustering to a
 #'   coarse graining strategy, *PhD Thesis EPFL*, no 3888, 2007.
-#'   <http://library.epfl.ch/theses/?nr=3888>
+#'   <https://infoscience.epfl.ch/entities/publication/35db87cd-756f-42c5-b0a5-60f4de0eae69>
 #' @source
 #'   See reference below.
 #' @keywords datasets
