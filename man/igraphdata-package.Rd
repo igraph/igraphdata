@@ -6,7 +6,7 @@
 \alias{igraphdata-package}
 \title{igraphdata: A Collection of Network Data Sets for the 'igraph' Package}
 \description{
-A small collection of various network data sets, to use with the 'igraph' package: the Enron email network, various food webs, interactions in the immunoglobulin protein, the karate club network, Koenigsberg's bridges, visuotactile brain areas of the macaque monkey, UK faculty friendship network, domestic US flights network, etc.
+A small collection of various network data sets, to use with the 'igraph' package: the Enron email network, various food webs, interactions in the immunoglobulin protein, the karate club network, Koenigsberg's bridges, visuotactile brain areas of the macaque monkey, UK faculty friendship network, domestic US flights network, etc. Also provides access to the API of \url{https://networks.skewed.de/}.
 }
 \seealso{
 Useful links:
@@ -22,6 +22,7 @@ Useful links:
 Authors:
 \itemize{
   \item Gábor Csárdi (\href{https://orcid.org/0000-0001-7098-9676}{ORCID})
+  \item David Schoch (\href{https://orcid.org/0000-0003-2952-4812}{ORCID})
 }
 
 Other contributors:
