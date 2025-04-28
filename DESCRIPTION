@@ -1,8 +1,16 @@
 Package: igraphdata
 Title: A Collection of Network Data Sets for the 'igraph' Package
-Version: 1.0.1.9003
-Author: Gabor Csardi <csardi.gabor@gmail.com>
-Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
+Version: 1.0.1.9013
+Authors@R: c(
+    person("Gábor", "Csárdi", , role = "aut",
+           comment = c(ORCID = "0000-0001-7098-9676")),
+    person("Szabolcs", "Horvát", , role = "ctb",
+           comment = c(ORCID = "0000-0002-3100-523X")),
+    person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-1416-3412")),
+    person("Maëlle", "Salmon", role = "ctb"),
+    person("Chan Zuckerberg Initiative", role = "fnd")
+  )
 Description: A small collection of various network data sets, to use with
     the 'igraph' package: the Enron email network, various food webs,
     interactions in the immunoglobulin protein, the karate club network,
@@ -20,5 +28,5 @@ Suggests:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.2.9000
 Config/testthat/edition: 3

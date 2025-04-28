@@ -16,4 +16,20 @@ Useful links:
 }
 
 }
+\author{
+\strong{Maintainer}: Kirill Müller \email{kirill@cynkra.com} (\href{https://orcid.org/0000-0002-1416-3412}{ORCID})
+
+Authors:
+\itemize{
+  \item Gábor Csárdi (\href{https://orcid.org/0000-0001-7098-9676}{ORCID})
+}
+
+Other contributors:
+\itemize{
+  \item Szabolcs Horvát (\href{https://orcid.org/0000-0002-3100-523X}{ORCID}) [contributor]
+  \item Maëlle Salmon [contributor]
+  \item Chan Zuckerberg Initiative [funder]
+}
+
+}
 \keyword{internal}

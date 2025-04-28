@@ -7,8 +7,6 @@
 #'   stored as a vertex attribute. This dataset can serve as a testbed for
 #'   community detection algorithms.
 #'
-#'
-#'
 #' @name UKfaculty
 #' @docType data
 #' @usage
@@ -25,6 +23,7 @@
 #' @references Nepusz T., Petroczi A., Negyessy L., Bazso F.: Fuzzy
 #'   communities and the concept of bridgeness in complex
 #'   networks. Physical Review E 77:016107, 2008.
+#'   \doi{10.1103/PhysRevE.77.016107}
 #' @source See reference below.
 #' @keywords datasets
 NULL
