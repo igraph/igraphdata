@@ -22,12 +22,15 @@ Reference: same as for \sQuote{ChesLower}.}
 \item{\sQuote{Chesapeake}}{Chesapeake Bay Mesohaline Network.
 
 Reference: Baird D. & Ulanowicz R.E. (1989) The seasonal dynamics
-of the Chesapeake Bay ecosystem. Ecological Monographs 59:329-364.}
+of the Chesapeake Bay ecosystem. Ecological Monographs 59:329-364.
+\doi{10.2307/1943071}
+}
 \item{\sQuote{CrystalC}}{Crystal River Creek (Control).
 
 Reference: Homer, M. and W.M. Kemp. Unpublished Ms. See also
 Ulanowicz, R.E. 1986. Growth and Development: Ecosystems
-Phenomenology. Springer, New York. pp 69-79.}
+Phenomenology. Springer, New York. pp 69-79.
+\url{https://link.springer.com/book/10.1007/978-1-4612-4916-0}}
 \item{\sQuote{CrystalD}}{Crystal River Creek (Delta Temp).
 
 Reference: same as for \sQuote{CrystalD}.}
@@ -36,7 +39,8 @@ Reference: same as for \sQuote{CrystalD}.}
 Reference: Almunia, J., G. Basterretxea, J. Aristegui, and
 R.E. Ulanowicz. (1999) Benthic- Pelagic switching in a coastal
 subtropical lagoon. Estuarine, Coastal and Shelf Science
-49:363-384.}
+49:363-384.
+\doi{10.1006/ecss.1999.0503}}
 \item{\sQuote{Michigan}}{Lake Michigan Control network.
 
 Reference: Krause, A. and D. Mason. (In preparation.) A. Krause,
@@ -49,7 +53,8 @@ Thesis. University of Coimbra, Coimbra, Portugal.}
 
 Reference: Monaco, M.E. and R.E. Ulanowicz. (1997) Comparative
 ecosystem trophic structure of three U.S. Mid-Atlantic
-estuaries. Mar. Ecol. Prog. Ser. 161:239-254.}
+estuaries. Mar. Ecol. Prog. Ser. 161:239-254.
+\doi{10.3354/meps161239}}
 \item{\sQuote{Rhode}}{Rhode River Watershed - Water Budget.
 
 Reference: Correll, D. (Unpublished manuscript) Smithsonian
@@ -60,7 +65,8 @@ Edgewater, Maryland 21037-0028 USA.}
 Reference: Baird, D., J. Luczkovich and R. R. Christian. (1998)
 Assessment of spatial and temporal variability in ecosystem
 attributes of the St Marks National Wildlife Refuge, Apalachee Bay,
-Florida. Estuarine, Coastal, and Shelf Science 47: 329-349.}
+Florida. Estuarine, Coastal, and Shelf Science 47: 329-349.
+\doi{10.1006/ecss.1998.0360}}
 \item{\sQuote{baydry}}{Florida Bay Trophic Exchange Matrix, dry season.
 
 Reference: Ulanowicz, R. E., C. Bondavalli, and
@@ -129,8 +135,8 @@ The graphs also contain some informative graph attributes:
 }
 \source{
 See references for the individual webs above. The data itself
-was downloaded from
-\url{http://vlado.fmf.uni-lj.si/pub/networks/data/bio/foodweb/foodweb.htm}.
+was downloaded from the then webpage of the Pajek software
+(link now broken).
 }
 \usage{
 foodwebs
