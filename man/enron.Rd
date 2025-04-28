@@ -55,7 +55,7 @@ An Enron email dataset has been made public by the U.S. Department of Justice.
 C.E. Priebe, J.M. Conroy, D.J. Marchette, and Y. Park,
 Scan Statistics on Enron Graphs Computational and Mathematical
 Organization Theory, Volume 11, Number 3, p229 - 247, October 2005,
-Springer Science+Business Media B.V.
+Springer Science+Business Media B.V. \doi{10.1007/s10588-005-5378-z}
 
 C.E. Priebe, J.M. Conroy, D.J. Marchette, and Y. Park,
 Scan Statistics on Enron Graphs, SIAM International Conference on
@@ -87,5 +87,5 @@ Conference on Data Mining, Sparks, Nevada, May 1-3, 2009,
 
 Y. Park, C.E. Priebe, A. Youssef, Anomaly Detection in Time Series of
 Graphs using Fusion of Invariants, Computational and Mathematical
-Organization Theory, submitted, 2010.
+Organization Theory, submitted, 2010. \doi{10.1109/JSTSP.2012.2233712}
 }
