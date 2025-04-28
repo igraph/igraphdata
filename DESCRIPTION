@@ -9,7 +9,7 @@ Description: A small collection of various network data sets, to use with
     Koenigsberg's bridges, visuotactile brain areas of the macaque monkey,
     UK faculty friendship network, domestic US flights network, etc.
 License: CC BY-SA 4.0 + file LICENSE
-URL: http://igraph.org
+URL: https://igraph.org/
 BugReports: https://github.com/igraph/igraphdata/issues
 Depends: 
     R (>= 2.10)
@@ -20,5 +20,5 @@ Suggests:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Config/testthat/edition: 3
