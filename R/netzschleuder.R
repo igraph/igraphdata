@@ -195,7 +195,7 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   nodes_df_raw <- utils::read.csv(unz(temp, node_file_name))
   #suppress warning if no character columns found
   nodes_df <- suppressWarnings(minty::type_convert(nodes_df_raw))
-  names(nodes_df)[1] <- "id"
+  names(nodes_df)[[1]] <- "id"
 
   # netzschleuder uses 0-indexing, igraph uses 1-indexing
   nodes_df[["id"]] <- nodes_df[["id"]] + 1L
