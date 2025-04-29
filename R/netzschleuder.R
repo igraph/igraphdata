@@ -43,7 +43,7 @@ resolve_name <- function(x) {
     res_names <- strsplit(x, "/", fixed = TRUE)[[1]]
     if (length(res_names) > 2) {
       cli::cli_abort(
-        "{.arg name} has {length(res_names)} components instead of 2."
+        "{.arg name} is not correctly formatted."
       )
     }
   } else {
@@ -110,17 +110,20 @@ download_file <- function(zip_url, token = NULL, file, size_limit) {
 ns_metadata <- function(name, collection = FALSE) {
   rlang::check_installed("cli")
   net_ident <- resolve_name(name)
-  path <- sprintf("api/net/%s", net_ident[[1]])
-  collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[[1]])
+  path <- sprintf("api/net/%s", net_ident[["collection"]])
+  collection_url <- sprintf(
+    "https://networks.skewed.de/net/%s",
+    net_ident[["collection"]]
+  )
   resp <- make_request(path)
   raw <- httr2::resp_body_json(resp)
   class(raw) <- c("ns_meta", class(raw))
   raw[["is_collection"]] <- collection
-  raw[["collection_name"]] <- net_ident[[1]]
+  raw[["collection_name"]] <- net_ident[["collection"]]
   if (collection) {
     return(raw)
   } else if (
-    net_ident[[1]] == net_ident[[2]] &&
+    net_ident[["collection"]] == net_ident[["network"]] &&
       length(unlist(raw$nets)) > 1 &&
       !collection
   ) {
@@ -130,10 +133,10 @@ ns_metadata <- function(name, collection = FALSE) {
         "i" = "see {.url {collection_url}}"
       )
     )
-  } else if (net_ident[[1]] == net_ident[[2]]) {
+  } else if (net_ident[["collection"]] == net_ident[["network"]]) {
     return(raw)
   } else {
-    idx <- which(unlist(raw[["nets"]]) == net_ident[[2]])
+    idx <- which(unlist(raw[["nets"]]) == net_ident[["network"]])
     if (length(idx) == 0) {
       cli::cli_abort(
         c(
@@ -142,7 +145,7 @@ ns_metadata <- function(name, collection = FALSE) {
         )
       )
     }
-    raw[["analyses"]] <- raw[["analyses"]][[net_ident[[2]]]]
+    raw[["analyses"]] <- raw[["analyses"]][[net_ident[["network"]]]]
     raw[["nets"]] <- raw[["nets"]][idx]
     raw
   }
@@ -164,14 +167,15 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
     }
     meta <- name
     net_ident <- c(meta[["collection_name"]], meta[["nets"]])
+    names(net_ident) <- c("collection", "network")
   } else {
     cli::cli_abort("{.arg name} must be a string or a `ns_meta` object.")
   }
 
   zip_url <- sprintf(
     "net/%s/files/%s.csv.zip",
-    net_ident[[1]],
-    net_ident[[2]]
+    net_ident[["collection"]],
+    net_ident[["network"]]
   )
 
   temp <- tempfile(fileext = "zip")
