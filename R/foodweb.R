@@ -36,7 +36,7 @@
 #'   Reference: Homer, M. and W.M. Kemp. Unpublished Ms. See also
 #'   Ulanowicz, R.E. 1986. Growth and Development: Ecosystems
 #'   Phenomenology. Springer, New York. pp 69-79.
-#'   \url{https://link.springer.com/book/10.1007/978-1-4612-4916-0}}
+#'   \url{https://doi.org/10.1007/978-1-4612-4916-0}}
 #'   \item{\sQuote{CrystalD}}{Crystal River Creek (Delta Temp).
 #'
 #'   Reference: same as for \sQuote{CrystalD}.}
