@@ -8,7 +8,8 @@ Authors@R: c(
            comment = c(ORCID = "0000-0002-3100-523X")),
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),
-    person("Maëlle", "Salmon", role = "ctb"),
+    person("Maëlle", "Salmon", role = "ctb",
+           comment = c(ORCID = "0000-0002-2815-0399")),
     person("David","Schoch", role = "aut",
            comment = c(ORCID="0000-0003-2952-4812")),
     person("Chan Zuckerberg Initiative", role = "fnd")
