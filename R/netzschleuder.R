@@ -40,16 +40,17 @@ resolve_name <- function(x) {
   x <- sub("//", "/", x)
 
   if (grepl("/", x)) {
-    x_split <- strsplit(x, "/", fixed = TRUE)[[1]]
-    if (length(x_split) > 2) {
+    res_names <- strsplit(x, "/", fixed = TRUE)[[1]]
+    if (length(res_names) > 2) {
       cli::cli_abort(
-        "{.arg name} has {length(x_split)} components instead of 2."
+        "{.arg name} has {length(res_names)} components instead of 2."
       )
     }
-    return(x_split)
   } else {
-    c(x, x)
+    res_names <- c(x, x)
   }
+  names(res_names) <- c("collection", "network")
+  res_names
 }
 
 download_file <- function(zip_url, token = NULL, file, size_limit) {
