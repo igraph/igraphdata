@@ -182,7 +182,8 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   node_file_name <- grep("node", zip_contents$Name, value = TRUE)
   gprops_file_name <- grep("gprops", zip_contents$Name, value = TRUE)
 
-  edges_df_raw <- utils::read.csv(unz(temp, edge_file_name))
+  con_edge <- unz(temp, edge_file_name)
+  edges_df_raw <- utils::read.csv(con_edge)
   edges_df <- suppressWarnings(minty::type_convert(edges_df_raw))
   source_loc <- grep("source", names(edges_df))
   target_loc <- grep("target", names(edges_df))
@@ -192,7 +193,9 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   edges_df[["from"]] <- edges_df[["from"]] + 1L
   edges_df[["to"]] <- edges_df[["to"]] + 1L
 
-  nodes_df_raw <- utils::read.csv(unz(temp, node_file_name))
+  con_nodes <- unz(temp, node_file_name)
+  nodes_df_raw <- utils::read.csv(con_nodes)
+
   #suppress warning if no character columns found
   nodes_df <- suppressWarnings(minty::type_convert(nodes_df_raw))
   names(nodes_df)[[1]] <- "id"
@@ -210,8 +213,12 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
     nodes_df[["y"]] <- mat[2, ]
   }
 
-  gprops_df <- readLines(unz(temp, gprops_file_name))
+  con_gprops <- unz(temp, gprops_file_name)
+  gprops_df <- readLines(con_gprops)
 
+  on.exit(close(con_edge))
+  on.exit(close(con_nodes))
+  on.exit(close(con_gprops))
   on.exit(unlink(temp))
 
   list(nodes = nodes_df, edges = edges_df, gprops = gprops_df, meta = meta)
