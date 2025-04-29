@@ -46,7 +46,7 @@ attributes are \code{NA} for these.
 }
 \source{
 The data was downloaded from
-\url{https://www.nature.com/articles/nature750#Sec8}.
+\url{https://doi.org/10.1038/nature750}.
 }
 \usage{
 yeast
