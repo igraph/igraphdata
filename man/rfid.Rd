@@ -38,5 +38,6 @@ P. Vanhems, A. Barrat, C. Cattuto, J.-F. Pinton, N. Khanafer,
 C. Regis, B.-a. Kim, B. Comte, N. Voirin: Estimating potential
 infection transmission routes in hospital wards using wearable
 proximity sensors. PloS One 8(9), e73970 306 (2013).
+\doi{10.1371/journal.pone.0073970}
 }
 \keyword{datasets}
