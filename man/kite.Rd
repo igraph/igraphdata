@@ -16,14 +16,14 @@ attributes \code{label}, \code{name} and \code{Firstname}.
 kite
 }
 \description{
-Krackhardt's kite is a fictionary social network with ten actors.
-It is the smallest graph for which the most central actor is different
-according to the three classic centality measures: degree, closeness
-and betweenness.
+Krackhardt's kite is a fictional social network with ten actors.
+It is a small (though not the smallest possible) graph for which the most
+central actors are different according to the three classic centrality
+measures: degree, closeness and betweenness.
 }
 \references{
 Assessing the Political Landscape: Structure, Cognition, and Power in
 Organizations. David Krackhardt. \emph{Admin. Sci. Quart.} 35, 342-369,
-1990.
+1990. \doi{10.2307/2393394}
 }
 \keyword{datasets}
