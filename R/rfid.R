@@ -33,6 +33,7 @@
 #'   C. Regis, B.-a. Kim, B. Comte, N. Voirin: Estimating potential
 #'   infection transmission routes in hospital wards using wearable
 #'   proximity sensors. PloS One 8(9), e73970 306 (2013).
+#'   \doi{10.1371/journal.pone.0073970}
 #' @source
 #'   See the reference below.
 #'   Please cite it if you use this dataset in your work.
