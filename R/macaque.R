@@ -24,6 +24,7 @@
 #'   the main cortical areas and connections involved in the tactile
 #'   function of the visual cortex by network analysis. *European
 #'     Journal of Neuroscience*, 23(7): 1919-1930, 2006.
+#' \doi{10.1111/j.1460-9568.2006.04678.x}
 #' @source See reference below.
 #' @keywords datasets
 NULL
