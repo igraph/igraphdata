@@ -32,7 +32,9 @@
 #'   from his paper.
 #'
 #'   This dataset is in the public domain.
+#' @references Leonhard Euler, “Solutio problematis ad geometriam situs pertinensis”
+#' Commentarii Academiae Scientarum Imperialis Petropolitanae, 8 (1736), 128–140 + Plate VIII.
 #' @source Wikipedia,
-#'   <http://de.wikipedia.org/wiki/K%C3%B6nigsberger_Br%C3%BCcken>
+#'   <https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg>
 #' @keywords datasets
 NULL

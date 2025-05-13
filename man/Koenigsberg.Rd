@@ -15,7 +15,7 @@ This dataset is in the public domain.
 }
 \source{
 Wikipedia,
-\url{http://de.wikipedia.org/wiki/K\%C3\%B6nigsberger_Br\%C3\%BCcken}
+\url{https://en.wikipedia.org/wiki/Seven_Bridges_of_K\%C3\%B6nigsberg}
 }
 \usage{
 Koenigsberg
@@ -36,5 +36,9 @@ completely every time (one could not walk half way onto the bridge and
 then turn around and later cross the other half from the other side).
 
 Euler proved that the problem has no solution.
+}
+\references{
+Leonhard Euler, “Solutio problematis ad geometriam situs pertinensis”
+Commentarii Academiae Scientarum Imperialis Petropolitanae, 8 (1736), 128–140 + Plate VIII.
 }
 \keyword{datasets}
