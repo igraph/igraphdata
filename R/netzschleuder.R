@@ -41,7 +41,8 @@ resolve_name <- function(x) {
 
   if (grepl("/", x)) {
     res_names <- strsplit(x, "/", fixed = TRUE)[[1]]
-    if (length(res_names) > 2) {
+   bad_names_format <- (length(res_names) > 2)
+    if (bad_names_format) {
       cli::cli_abort(
         "{.arg name} is not correctly formatted."
       )
@@ -49,8 +50,7 @@ resolve_name <- function(x) {
   } else {
     res_names <- c(x, x)
   }
-  names(res_names) <- c("collection", "network")
-  res_names
+  rlang::set_names(res_names, c("collection", "network"))
 }
 
 download_file <- function(zip_url, token = NULL, file, size_limit) {
