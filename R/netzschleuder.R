@@ -41,7 +41,7 @@ resolve_name <- function(x) {
 
   if (grepl("/", x)) {
     res_names <- strsplit(x, "/", fixed = TRUE)[[1]]
-   bad_names_format <- (length(res_names) > 2)
+    bad_names_format <- (length(res_names) > 2)
     if (bad_names_format) {
       cli::cli_abort(
         "{.arg name} is not correctly formatted."
@@ -122,7 +122,10 @@ ns_metadata <- function(name, collection = FALSE) {
   raw[["collection_name"]] <- net_ident[["collection"]]
   if (collection) {
     return(raw)
-  } else if (
+  }
+
+  # Check if collection equals network and multiple nets exist
+  if (
     net_ident[["collection"]] == net_ident[["network"]] &&
       length(unlist(raw$nets)) > 1 &&
       !collection
@@ -133,22 +136,27 @@ ns_metadata <- function(name, collection = FALSE) {
         "i" = "see {.url {collection_url}}"
       )
     )
-  } else if (net_ident[["collection"]] == net_ident[["network"]]) {
-    return(raw)
-  } else {
-    idx <- which(unlist(raw[["nets"]]) == net_ident[["network"]])
-    if (length(idx) == 0) {
-      cli::cli_abort(
-        c(
-          "{net_ident[[2]]} is not part of the collection {net_ident[[1]]}.",
-          "i" = "see {.url {collection_url}}"
-        )
-      )
-    }
-    raw[["analyses"]] <- raw[["analyses"]][[net_ident[["network"]]]]
-    raw[["nets"]] <- raw[["nets"]][idx]
-    raw
   }
+
+  # If collection equals network
+  if (net_ident[["collection"]] == net_ident[["network"]]) {
+    return(raw)
+  }
+
+  # Find matching network
+  idx <- which(unlist(raw[["nets"]]) == net_ident[["network"]])
+  if (length(idx) == 0) {
+    cli::cli_abort(
+      c(
+        "{net_ident[[2]]} is not part of the collection {net_ident[[1]]}.",
+        "i" = "see {.url {collection_url}}"
+      )
+    )
+  }
+
+  raw[["analyses"]] <- raw[["analyses"]][[net_ident[["network"]]]]
+  raw[["nets"]] <- raw[["nets"]][idx]
+  raw
 }
 
 #' @rdname netzschleuder
@@ -166,8 +174,10 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
       ))
     }
     meta <- name
-    net_ident <- c(meta[["collection_name"]], meta[["nets"]])
-    names(net_ident) <- c("collection", "network")
+    net_ident <- c(
+      collection = meta[["collection_name"]],
+      network = meta[["nets"]]
+    )
   } else {
     cli::cli_abort("{.arg name} must be a string or a `ns_meta` object.")
   }
