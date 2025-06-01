@@ -63,8 +63,7 @@ download_file <- function(zip_url, token = NULL, file, size_limit) {
       "i" = "To download the file, set {.arg size_limit} to a value greater than {gb_size}"
     ))
   }
-  resp <- make_request(zip_url, token, method = "GET", file = file)
-  # writeBin(httr2::resp_body_raw(resp), file)
+  make_request(zip_url, token, method = "GET", file = file)
   invisible(NULL)
 }
 
