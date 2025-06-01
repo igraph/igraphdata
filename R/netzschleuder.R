@@ -189,6 +189,7 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   )
 
   temp <- tempfile(fileext = "zip")
+  on.exit(unlink(temp))
   download_file(zip_url, token = token, file = temp, size_limit = size_limit)
 
   zip_contents <- utils::unzip(temp, list = TRUE)
@@ -198,6 +199,7 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   gprops_file_name <- grep("gprops", zip_contents$Name, value = TRUE)
 
   con_edge <- unz(temp, edge_file_name)
+  on.exit(close(con_edge))
   edges_df_raw <- utils::read.csv(con_edge)
   edges_df <- suppressWarnings(minty::type_convert(edges_df_raw))
   source_loc <- grep("source", names(edges_df))
@@ -209,6 +211,7 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   edges_df[["to"]] <- edges_df[["to"]] + 1L
 
   con_nodes <- unz(temp, node_file_name)
+  on.exit(close(con_nodes))
   nodes_df_raw <- utils::read.csv(con_nodes)
 
   #suppress warning if no character columns found
@@ -229,12 +232,8 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   }
 
   con_gprops <- unz(temp, gprops_file_name)
-  gprops_df <- readLines(con_gprops)
-
-  on.exit(close(con_edge))
-  on.exit(close(con_nodes))
   on.exit(close(con_gprops))
-  on.exit(unlink(temp))
+  gprops_df <- readLines(con_gprops)
 
   list(nodes = nodes_df, edges = edges_df, gprops = gprops_df, meta = meta)
 }
