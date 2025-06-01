@@ -13,7 +13,7 @@ get_base_req <- function() {
   .pkg_env$base_req
 }
 
-make_request <- function(path, token = NULL, method = "GET") {
+make_request <- function(path, token = NULL, method = "GET", file = NULL) {
   rlang::check_installed("httr2")
   req <- httr2::req_url_path(get_base_req(), path)
   req <- httr2::req_method(req, method)
@@ -24,7 +24,7 @@ make_request <- function(path, token = NULL, method = "GET") {
     req <- httr2::req_headers(req, `WWW-Authenticate` = token)
   }
 
-  resp <- httr2::req_perform(req)
+  resp <- httr2::req_perform(req, path = file)
 
   if (httr2::resp_status(resp) != 200) {
     stop("Failed to download file. Status: ", httr2::resp_status(resp))
@@ -63,8 +63,8 @@ download_file <- function(zip_url, token = NULL, file, size_limit) {
       "i" = "To download the file, set {.arg size_limit} to a value greater than {gb_size}"
     ))
   }
-  resp <- make_request(zip_url, token, method = "GET")
-  writeBin(httr2::resp_body_raw(resp), file)
+  resp <- make_request(zip_url, token, method = "GET", file = file)
+  # writeBin(httr2::resp_body_raw(resp), file)
   invisible(NULL)
 }
 
