@@ -13,7 +13,7 @@ get_base_req <- function() {
   .pkg_env$base_req
 }
 
-make_request <- function(path, token = NULL, method = "GET") {
+make_request <- function(path, token = NULL, method = "GET", file = NULL) {
   rlang::check_installed("httr2")
   req <- httr2::req_url_path(get_base_req(), path)
   req <- httr2::req_method(req, method)
@@ -24,7 +24,7 @@ make_request <- function(path, token = NULL, method = "GET") {
     req <- httr2::req_headers(req, `WWW-Authenticate` = token)
   }
 
-  resp <- httr2::req_perform(req)
+  resp <- httr2::req_perform(req, path = file)
 
   if (httr2::resp_status(resp) != 200) {
     stop("Failed to download file. Status: ", httr2::resp_status(resp))
@@ -40,16 +40,17 @@ resolve_name <- function(x) {
   x <- sub("//", "/", x)
 
   if (grepl("/", x)) {
-    x_split <- strsplit(x, "/", fixed = TRUE)[[1]]
-    if (length(x_split) > 2) {
+    res_names <- strsplit(x, "/", fixed = TRUE)[[1]]
+    bad_names_format <- (length(res_names) > 2)
+    if (bad_names_format) {
       cli::cli_abort(
-        "{.arg name} has {length(x_split)} components instead of 2."
+        "{.arg name} is not correctly formatted."
       )
     }
-    return(x_split)
   } else {
-    c(x, x)
+    res_names <- c(x, x)
   }
+  rlang::set_names(res_names, c("collection", "network"))
 }
 
 download_file <- function(zip_url, token = NULL, file, size_limit) {
@@ -62,8 +63,7 @@ download_file <- function(zip_url, token = NULL, file, size_limit) {
       "i" = "To download the file, set {.arg size_limit} to a value greater than {gb_size}"
     ))
   }
-  resp <- make_request(zip_url, token, method = "GET")
-  writeBin(httr2::resp_body_raw(resp), file)
+  make_request(zip_url, token, method = "GET", file = file)
   invisible(NULL)
 }
 
@@ -109,17 +109,23 @@ download_file <- function(zip_url, token = NULL, file, size_limit) {
 ns_metadata <- function(name, collection = FALSE) {
   rlang::check_installed("cli")
   net_ident <- resolve_name(name)
-  path <- sprintf("api/net/%s", net_ident[[1]])
-  collection_url <- sprintf("https://networks.skewed.de/net/%s", net_ident[[1]])
+  path <- sprintf("api/net/%s", net_ident[["collection"]])
+  collection_url <- sprintf(
+    "https://networks.skewed.de/net/%s",
+    net_ident[["collection"]]
+  )
   resp <- make_request(path)
   raw <- httr2::resp_body_json(resp)
   class(raw) <- c("ns_meta", class(raw))
   raw[["is_collection"]] <- collection
-  raw[["collection_name"]] <- net_ident[[1]]
+  raw[["collection_name"]] <- net_ident[["collection"]]
   if (collection) {
     return(raw)
-  } else if (
-    net_ident[[1]] == net_ident[[2]] &&
+  }
+
+  # Check if collection equals network and multiple nets exist
+  if (
+    net_ident[["collection"]] == net_ident[["network"]] &&
       length(unlist(raw$nets)) > 1 &&
       !collection
   ) {
@@ -129,22 +135,27 @@ ns_metadata <- function(name, collection = FALSE) {
         "i" = "see {.url {collection_url}}"
       )
     )
-  } else if (net_ident[[1]] == net_ident[[2]]) {
-    return(raw)
-  } else {
-    idx <- which(unlist(raw[["nets"]]) == net_ident[[2]])
-    if (length(idx) == 0) {
-      cli::cli_abort(
-        c(
-          "{net_ident[[2]]} is not part of the collection {net_ident[[1]]}.",
-          "i" = "see {.url {collection_url}}"
-        )
-      )
-    }
-    raw[["analyses"]] <- raw[["analyses"]][[net_ident[[2]]]]
-    raw[["nets"]] <- raw[["nets"]][idx]
-    raw
   }
+
+  # If collection equals network
+  if (net_ident[["collection"]] == net_ident[["network"]]) {
+    return(raw)
+  }
+
+  # Find matching network
+  idx <- which(unlist(raw[["nets"]]) == net_ident[["network"]])
+  if (length(idx) == 0) {
+    cli::cli_abort(
+      c(
+        "{net_ident[[2]]} is not part of the collection {net_ident[[1]]}.",
+        "i" = "see {.url {collection_url}}"
+      )
+    )
+  }
+
+  raw[["analyses"]] <- raw[["analyses"]][[net_ident[["network"]]]]
+  raw[["nets"]] <- raw[["nets"]][idx]
+  raw
 }
 
 #' @rdname netzschleuder
@@ -162,18 +173,22 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
       ))
     }
     meta <- name
-    net_ident <- c(meta[["collection_name"]], meta[["nets"]])
+    net_ident <- c(
+      collection = meta[["collection_name"]],
+      network = meta[["nets"]]
+    )
   } else {
     cli::cli_abort("{.arg name} must be a string or a `ns_meta` object.")
   }
 
   zip_url <- sprintf(
     "net/%s/files/%s.csv.zip",
-    net_ident[[1]],
-    net_ident[[2]]
+    net_ident[["collection"]],
+    net_ident[["network"]]
   )
 
   temp <- tempfile(fileext = "zip")
+  on.exit(unlink(temp))
   download_file(zip_url, token = token, file = temp, size_limit = size_limit)
 
   zip_contents <- utils::unzip(temp, list = TRUE)
@@ -182,7 +197,9 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   node_file_name <- grep("node", zip_contents$Name, value = TRUE)
   gprops_file_name <- grep("gprops", zip_contents$Name, value = TRUE)
 
-  edges_df_raw <- utils::read.csv(unz(temp, edge_file_name))
+  con_edge <- unz(temp, edge_file_name)
+  on.exit(close(con_edge))
+  edges_df_raw <- utils::read.csv(con_edge)
   edges_df <- suppressWarnings(minty::type_convert(edges_df_raw))
   source_loc <- grep("source", names(edges_df))
   target_loc <- grep("target", names(edges_df))
@@ -192,10 +209,13 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
   edges_df[["from"]] <- edges_df[["from"]] + 1L
   edges_df[["to"]] <- edges_df[["to"]] + 1L
 
-  nodes_df_raw <- utils::read.csv(unz(temp, node_file_name))
+  con_nodes <- unz(temp, node_file_name)
+  on.exit(close(con_nodes))
+  nodes_df_raw <- utils::read.csv(con_nodes)
+
   #suppress warning if no character columns found
   nodes_df <- suppressWarnings(minty::type_convert(nodes_df_raw))
-  names(nodes_df)[1] <- "id"
+  names(nodes_df)[[1]] <- "id"
 
   # netzschleuder uses 0-indexing, igraph uses 1-indexing
   nodes_df[["id"]] <- nodes_df[["id"]] + 1L
@@ -210,9 +230,9 @@ ns_df <- function(name, token = NULL, size_limit = 1) {
     nodes_df[["y"]] <- mat[2, ]
   }
 
-  gprops_df <- readLines(unz(temp, gprops_file_name))
-
-  on.exit(unlink(temp))
+  con_gprops <- unz(temp, gprops_file_name)
+  on.exit(close(con_gprops))
+  gprops_df <- readLines(con_gprops)
 
   list(nodes = nodes_df, edges = edges_df, gprops = gprops_df, meta = meta)
 }
