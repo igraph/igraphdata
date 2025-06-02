@@ -56,7 +56,7 @@
 #' @references
 #'   Wayne W. Zachary. An Information Flow Model for Conflict and Fission
 #'   in Small Groups. *Journal of Anthropological Research* Vol. 33,
-#'   No. 4 452-473
+#'   No. 4 452-473 \doi{10.1086/jar.33.4.3629752}
 #' @source
 #'   See reference below.
 #' @keywords datasets

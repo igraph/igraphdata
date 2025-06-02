@@ -60,6 +60,6 @@ A.'s faction but chose Mr. Hi's club.
 \references{
 Wayne W. Zachary. An Information Flow Model for Conflict and Fission
 in Small Groups. \emph{Journal of Anthropological Research} Vol. 33,
-No. 4 452-473
+No. 4 452-473 \doi{10.1086/jar.33.4.3629752}
 }
 \keyword{datasets}
