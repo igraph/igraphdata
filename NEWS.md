@@ -1,5 +1,78 @@
 
 
+# igraphdata 1.0.1.9014
+
+## Bug fixes
+
+- Improve netzschleuder internals (#38, #40).
+
+## Features
+
+- New `ns_graph()` and lower-level `ns_df()` and `ns_metadata()` to download from [netzschleuder](https://networks.skewed.de) (#22, #23).
+
+## Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/igraph/igraphdata/actions/runs/17451565865
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/igraph/igraphdata/actions/runs/14636196541
+
+## Continuous integration
+
+- Use workflows for fledge (#50).
+
+- Sync (#49).
+
+- Use reviewdog for external PRs (#48).
+
+- Cleanup and fix macOS (#47).
+
+- Format with air, check detritus, better handling of `extra-packages` (#46).
+
+- Enhance permissions for workflow (#41).
+
+- Permissions, better tests for missing suggests, lints (#39).
+
+- Only fail covr builds if token is given (#34).
+
+- Always use `_R_CHECK_FORCE_SUGGESTS_=false` (#30).
+
+- Correct installation of xml2 (#29).
+
+- Explain (#28).
+
+- Add xml2 for covr, print testthat results (#27).
+
+- Fix (#26).
+
+- Sync (#25).
+
+## Documentation
+
+- Add DOI for karate (@maelle, #37).
+
+- Add DOI for macaque dataset (@maelle, #44).
+
+- Add DOI for rfid data (@maelle, #45).
+
+- Add reference for lesmis (@maelle, #43).
+
+- Add 2 DOIs for enron (@maelle, #36).
+
+- Add reference for Koenigsberg data, improve Wikipedia link (@maelle, #42).
+
+- Add my ORCID (#24).
+
+- Added a DOI to the UKfaculty citation.
+
+## Uncategorized
+
+- Docs: correct claim about Krackhardt's kite being the smallest network.
+
+
 # igraphdata 1.0.1.9013
 
 ## Continuous integration
