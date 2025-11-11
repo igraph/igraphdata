@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">igraphdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1.9013</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1.9014</span>
       </span>
     </div>
 
@@ -47,6 +47,60 @@
       <small>Source: <a href="https://github.com/igraph/igraphdata/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.0.1.9014" id="igraphdata-1019014">igraphdata 1.0.1.9014<a class="anchor" aria-label="anchor" href="#igraphdata-1019014"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-0-1-9014">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-0-1-9014"></a></h3>
+<ul><li>Improve netzschleuder internals (<a href="https://github.com/igraph/igraphdata/issues/38" class="external-link">#38</a>, <a href="https://github.com/igraph/igraphdata/issues/40" class="external-link">#40</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="features-1-0-1-9014">Features<a class="anchor" aria-label="anchor" href="#features-1-0-1-9014"></a></h3>
+<ul><li>New <code><a href="../reference/netzschleuder.html">ns_graph()</a></code> and lower-level <code><a href="../reference/netzschleuder.html">ns_df()</a></code> and <code><a href="../reference/netzschleuder.html">ns_metadata()</a></code> to download from <a href="https://networks.skewed.de" class="external-link">netzschleuder</a> (<a href="https://github.com/igraph/igraphdata/issues/22" class="external-link">#22</a>, <a href="https://github.com/igraph/igraphdata/issues/23" class="external-link">#23</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="chore-1-0-1-9014">Chore<a class="anchor" aria-label="anchor" href="#chore-1-0-1-9014"></a></h3>
+<ul><li>
+<p>Auto-update from GitHub Actions.</p>
+<p>Run: <a href="https://github.com/igraph/igraphdata/actions/runs/17451565865" class="external-link uri">https://github.com/igraph/igraphdata/actions/runs/17451565865</a></p>
+</li>
+<li>
+<p>Auto-update from GitHub Actions.</p>
+<p>Run: <a href="https://github.com/igraph/igraphdata/actions/runs/14636196541" class="external-link uri">https://github.com/igraph/igraphdata/actions/runs/14636196541</a></p>
+</li>
+</ul></div>
+<div class="section level3">
+<h3 id="continuous-integration-1-0-1-9014">Continuous integration<a class="anchor" aria-label="anchor" href="#continuous-integration-1-0-1-9014"></a></h3>
+<ul><li><p>Use workflows for fledge (<a href="https://github.com/igraph/igraphdata/issues/50" class="external-link">#50</a>).</p></li>
+<li><p>Sync (<a href="https://github.com/igraph/igraphdata/issues/49" class="external-link">#49</a>).</p></li>
+<li><p>Use reviewdog for external PRs (<a href="https://github.com/igraph/igraphdata/issues/48" class="external-link">#48</a>).</p></li>
+<li><p>Cleanup and fix macOS (<a href="https://github.com/igraph/igraphdata/issues/47" class="external-link">#47</a>).</p></li>
+<li><p>Format with air, check detritus, better handling of <code>extra-packages</code> (<a href="https://github.com/igraph/igraphdata/issues/46" class="external-link">#46</a>).</p></li>
+<li><p>Enhance permissions for workflow (<a href="https://github.com/igraph/igraphdata/issues/41" class="external-link">#41</a>).</p></li>
+<li><p>Permissions, better tests for missing suggests, lints (<a href="https://github.com/igraph/igraphdata/issues/39" class="external-link">#39</a>).</p></li>
+<li><p>Only fail covr builds if token is given (<a href="https://github.com/igraph/igraphdata/issues/34" class="external-link">#34</a>).</p></li>
+<li><p>Always use <code>_R_CHECK_FORCE_SUGGESTS_=false</code> (<a href="https://github.com/igraph/igraphdata/issues/30" class="external-link">#30</a>).</p></li>
+<li><p>Correct installation of xml2 (<a href="https://github.com/igraph/igraphdata/issues/29" class="external-link">#29</a>).</p></li>
+<li><p>Explain (<a href="https://github.com/igraph/igraphdata/issues/28" class="external-link">#28</a>).</p></li>
+<li><p>Add xml2 for covr, print testthat results (<a href="https://github.com/igraph/igraphdata/issues/27" class="external-link">#27</a>).</p></li>
+<li><p>Fix (<a href="https://github.com/igraph/igraphdata/issues/26" class="external-link">#26</a>).</p></li>
+<li><p>Sync (<a href="https://github.com/igraph/igraphdata/issues/25" class="external-link">#25</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="documentation-1-0-1-9014">Documentation<a class="anchor" aria-label="anchor" href="#documentation-1-0-1-9014"></a></h3>
+<ul><li><p>Add DOI for karate (<a href="https://github.com/maelle" class="external-link">@maelle</a>, <a href="https://github.com/igraph/igraphdata/issues/37" class="external-link">#37</a>).</p></li>
+<li><p>Add DOI for macaque dataset (<a href="https://github.com/maelle" class="external-link">@maelle</a>, <a href="https://github.com/igraph/igraphdata/issues/44" class="external-link">#44</a>).</p></li>
+<li><p>Add DOI for rfid data (<a href="https://github.com/maelle" class="external-link">@maelle</a>, <a href="https://github.com/igraph/igraphdata/issues/45" class="external-link">#45</a>).</p></li>
+<li><p>Add reference for lesmis (<a href="https://github.com/maelle" class="external-link">@maelle</a>, <a href="https://github.com/igraph/igraphdata/issues/43" class="external-link">#43</a>).</p></li>
+<li><p>Add 2 DOIs for enron (<a href="https://github.com/maelle" class="external-link">@maelle</a>, <a href="https://github.com/igraph/igraphdata/issues/36" class="external-link">#36</a>).</p></li>
+<li><p>Add reference for Koenigsberg data, improve Wikipedia link (<a href="https://github.com/maelle" class="external-link">@maelle</a>, <a href="https://github.com/igraph/igraphdata/issues/42" class="external-link">#42</a>).</p></li>
+<li><p>Add my ORCID (<a href="https://github.com/igraph/igraphdata/issues/24" class="external-link">#24</a>).</p></li>
+<li><p>Added a DOI to the UKfaculty citation.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="uncategorized-1-0-1-9014">Uncategorized<a class="anchor" aria-label="anchor" href="#uncategorized-1-0-1-9014"></a></h3>
+<ul><li>Docs: correct claim about Krackhardt’s kite being the smallest network.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0.1.9013" id="igraphdata-1019013">igraphdata 1.0.1.9013<a class="anchor" aria-label="anchor" href="#igraphdata-1019013"></a></h2>
 <div class="section level3">
