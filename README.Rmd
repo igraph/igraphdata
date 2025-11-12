@@ -13,17 +13,16 @@ knitr::opts_chunk$set(
 
 ```{r, echo = FALSE, results = 'hide'}
 options(pager = function(files, header, title, delete.file) {
-	for (f in files) {
-		l <- readLines(f)
-		cat(l, sep = "\n")
-	}
+  for (f in files) {
+    l <- readLines(f)
+    cat(l, sep = "\n")
+  }
 })
 ```
 
 # Data sets for the igraph R package
 
-[![Linux build status](https://travis-ci.org/igraph/igraphdata.png)](https://travis-ci.org/igraph/igraphdata)
-[![Windows build status](https://ci.appveyor.com/api/projects/status/6wov9hh8oprrpkhs?svg=true)](https://ci.appveyor.com/project/gaborcsardi/igraphdata)
+[![rcc](https://github.com/igraph/igraphdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/igraph/igraphdata/actions/workflows/R-CMD-check.yaml)
 
 This is a data R package, that contains network data sets,
 to be used with the igraph R package.
@@ -37,7 +36,7 @@ install.packages("igraphdata")
 ```
 
 You can install the development version from Github, using the
-[devtools package](https://github.com/hadley/devtools):
+[devtools package](https://github.com/r-lib/devtools):
 
 ```{r, eval = FALSE}
 devtools::install_github("igraph/igraphdata")
