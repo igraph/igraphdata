@@ -1,5 +1,12 @@
 
 
+# igraphdata 1.0.1.9015
+
+## Continuous integration
+
+- Fix reviewdog and add commenting workflow (#51).
+
+
 # igraphdata 1.0.1.9014
 
 ## Bug fixes
