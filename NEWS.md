@@ -1,5 +1,12 @@
 
 
+# igraphdata 1.0.1.9016
+
+## Continuous integration
+
+- Install binaries from r-universe for dev workflow (#52).
+
+
 # igraphdata 1.0.1.9015
 
 ## Continuous integration
