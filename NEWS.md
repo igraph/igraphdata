@@ -1,5 +1,16 @@
 
 
+# igraphdata 1.0.1.9017
+
+## Continuous integration
+
+- Fix comment (#55).
+
+- Tweaks (#54).
+
+- Test all R versions on branches that start with cran- (#53).
+
+
 # igraphdata 1.0.1.9016
 
 ## Continuous integration
