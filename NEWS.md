@@ -1,5 +1,14 @@
 
 
+# igraphdata 1.0.1.9019
+
+## Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/igraph/igraphdata/actions/runs/25270200977
+
+
 # igraphdata 1.0.1.9018
 
 ## Chore
