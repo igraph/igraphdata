@@ -31,9 +31,9 @@ carried out by a given airline, using a given aircraft type.}
 }
 }
 \source{
-Most of this information was downloaded from The Research and
+Most of this information was downloaded from The (now dissolved) Research and
 Innovative Technology Administration (RITA). See
-\url{http://www.rita.dot.gov/about_rita/} for details. The airport
+\url{https://en.wikipedia.org/wiki/Research_and_Innovative_Technology_Administration} for details. The airport
 position information was collected from Wikipedia and other public
 online sources.
 }

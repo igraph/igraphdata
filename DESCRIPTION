@@ -21,7 +21,7 @@ Description: A small collection of various network data sets, to use with
     UK faculty friendship network, domestic US flights network, etc. Also provides
     access to the API of <https://networks.skewed.de/>.
 License: CC BY-SA 4.0 + file LICENSE
-URL: http://igraph.org
+URL: https://igraph.org/
 BugReports: https://github.com/igraph/igraphdata/issues
 Depends: 
     R (>= 4.0)

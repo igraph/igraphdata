@@ -11,7 +11,7 @@ A small collection of various network data sets, to use with the 'igraph' packag
 \seealso{
 Useful links:
 \itemize{
-  \item \url{http://igraph.org}
+  \item \url{https://igraph.org/}
   \item Report bugs at \url{https://github.com/igraph/igraphdata/issues}
 }
 
