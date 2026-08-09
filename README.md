@@ -2,7 +2,7 @@
 
 # Data sets for the igraph R package
 
-[![Linux build status](https://travis-ci.org/igraph/igraphdata.png)](https://travis-ci.org/igraph/igraphdata) [![Windows build status](https://ci.appveyor.com/api/projects/status/6wov9hh8oprrpkhs?svg=true)](https://ci.appveyor.com/project/gaborcsardi/igraphdata)
+[![rcc](https://github.com/igraph/igraphdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/igraph/igraphdata/actions/workflows/R-CMD-check.yaml)
 
 This is a data R package, that contains network data sets, to be used with the igraph R package.
 
@@ -13,7 +13,7 @@ From CRAN:
 <pre class='chroma'>
 <span><span class='nf'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='o'>(</span><span class='s'>"igraphdata"</span><span class='o'>)</span></span></pre>
 
-You can install the development version from Github, using the [devtools package](https://github.com/hadley/devtools):
+You can install the development version from Github, using the [devtools package](https://github.com/r-lib/devtools):
 
 <pre class='chroma'>
 <span><span class='nf'>devtools</span><span class='nf'>::</span><span class='nf'><a href='https://remotes.r-lib.org/reference/install_github.html'>install_github</a></span><span class='o'>(</span><span class='s'>"igraph/igraphdata"</span><span class='o'>)</span></span></pre>
@@ -21,7 +21,7 @@ You can install the development version from Github, using the [devtools package
 ## Usage
 
 <pre class='chroma'>
-<span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='http://igraph.org'>igraphdata</a></span><span class='o'>)</span></span>
+<span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://igraph.org/'>igraphdata</a></span><span class='o'>)</span></span>
 <span><span class='nf'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='o'>(</span>package <span class='o'>=</span> <span class='s'>"igraphdata"</span><span class='o'>)</span></span></pre>
 <pre class='chroma'>
 <span><span class='c'>#&gt; Data sets in package 'igraphdata':</span></span>

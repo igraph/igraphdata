@@ -43,9 +43,9 @@
 #'     \item{Distance}{The distance between the two airports, in miles.}
 #'   }
 #' @source
-#'   Most of this information was downloaded from The Research and
+#'   Most of this information was downloaded from The (now dissolved) Research and
 #'   Innovative Technology Administration (RITA). See
-#'   <http://www.rita.dot.gov/about_rita/> for details. The airport
+#'   <https://en.wikipedia.org/wiki/Research_and_Innovative_Technology_Administration> for details. The airport
 #'   position information was collected from Wikipedia and other public
 #'   online sources.
 #' @keywords datasets

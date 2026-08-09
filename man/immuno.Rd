@@ -25,6 +25,6 @@ is smaller than the threshold value \eqn{\theta=8}{theta=8} Angstrom.
 \references{
 D. Gfeller, Simplifying complex networks: from a clustering to a
 coarse graining strategy, \emph{PhD Thesis EPFL}, no 3888, 2007.
-\url{http://library.epfl.ch/theses/?nr=3888}
+\url{https://doi.org/10.5075/epfl-thesis-3888}
 }
 \keyword{datasets}
