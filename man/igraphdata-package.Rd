@@ -8,6 +8,15 @@
 \description{
 A small collection of various network data sets, to use with the 'igraph' package: the Enron email network, various food webs, interactions in the immunoglobulin protein, the karate club network, Koenigsberg's bridges, visuotactile brain areas of the macaque monkey, UK faculty friendship network, domestic US flights network, etc. Also provides access to the API of \url{https://networks.skewed.de/}.
 }
+\section{How to use the data sets}{
+
+After loading the \pkg{igraphdata} package, the various data sets are available
+by accessing them directly.
+
+Get a list of data sets included in this package with
+\code{data(package = "igraphdata")}.
+}
+
 \seealso{
 Useful links:
 \itemize{
