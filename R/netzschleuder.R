@@ -70,8 +70,8 @@ download_file <- function(zip_url, token = NULL, file, size_limit) {
 #' Download and Convert Graph Data from Netzschleuder
 #'
 #' These functions provide tools to interact with the Netzschleuder network dataset archive.
-#'  Netzschleuder (<https://networks.skewed.de/>) is a large online repository for network datasets,
-#'  aimed at aiding scientific research.
+#' Netzschleuder (<https://networks.skewed.de/>) is a large online repository for network datasets,
+#' aimed at aiding scientific research.
 #' \describe{
 #'   \item{`ns_metadata()`}{ retrieves metadata about a network or network collection.}
 #'   \item{`ns_df()`}{downloads the graph data as data frames (nodes, edges, and graph properties).}
