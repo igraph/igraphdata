@@ -78,11 +78,12 @@ download_file <- function(zip_url, token = NULL, file, size_limit) {
 #'   \item{`ns_graph()`}{creates an `igraph` object directly from Netzschleuder.}
 #' }
 #'
-#' @param name Character. The name of the network dataset. To get a network from a collection,
-#'   use the format `<collection_name>/<network_name>`.
+#' @param name Character. The name of the network dataset.
+#'   To get a network from a collection, use the format `<collection_name>/<network_name>`.
 #' @param collection Logical. If TRUE, get the metadata of a whole collection of networks.
 #' @param token Character. Some networks have restricted access and require a token.
-#' @param size_limit Numeric. Maximum allowed file size in GB. Larger files will be prevented from being downloaded.
+#' @param size_limit Numeric. Maximum allowed file size in GB.
+#'   Larger files will be prevented from being downloaded.
 #'   See <https://networks.skewed.de/restricted>.
 #'
 #' @return

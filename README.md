@@ -20,8 +20,8 @@ From CRAN:
 install.packages("igraphdata")
 ```
 
-You can install the development version from Github, using the
-[devtools package](https://github.com/hadley/devtools):
+You can install the development version from Github,
+using the [devtools package](https://github.com/hadley/devtools):
 
 ``` r
 devtools::install_github("igraph/igraphdata")
@@ -52,5 +52,4 @@ data(package = "igraphdata")
 
 # License
 
-CC BY-SA 4.0, plus see [LICENSE](LICENSE) for the licenses of the
-individual data sets.
+CC BY-SA 4.0, plus see [LICENSE](LICENSE) for the licenses of the individual data sets.

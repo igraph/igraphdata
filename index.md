@@ -21,8 +21,8 @@ From CRAN:
 install.packages("igraphdata")
 ```
 
-You can install the development version from Github, using the
-[devtools package](https://github.com/hadley/devtools):
+You can install the development version from Github,
+using the [devtools package](https://github.com/hadley/devtools):
 
 ``` r
 devtools::install_github("igraph/igraphdata")
