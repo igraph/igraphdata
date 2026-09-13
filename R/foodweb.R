@@ -12,7 +12,7 @@
 #' foodwebs
 #' @format
 #' A named list of directed `igraph` graph objects.
-#' Here are the list of the graphs included:
+#'  Here are the list of the graphs included:
 #' \describe{
 #'   \item{\sQuote{ChesLower}}{Lower Chesapeake Bay in Summer.
 #'

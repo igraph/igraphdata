@@ -1,7 +1,7 @@
 #' Example files
 #'
 #' Functions that return paths to example files of the "Les Miserables" example network,
-#' in the GML, GraphML or Pajek format.
+#'  in the GML, GraphML or Pajek format.
 #'
 #' @return A string indicating an absolute path to a file.
 #' @name lesmis
