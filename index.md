@@ -7,8 +7,10 @@
 
 # Data sets for the igraph R package
 
-[![Linux build status](https://travis-ci.org/igraph/igraphdata.png)](https://travis-ci.org/igraph/igraphdata)
-[![Windows build status](https://ci.appveyor.com/api/projects/status/6wov9hh8oprrpkhs?svg=true)](https://ci.appveyor.com/project/gaborcsardi/igraphdata)
+<!-- badges: start -->
+
+[![rcc](https://github.com/igraph/igraphdata/workflows/rcc/badge.svg)](https://github.com/igraph/igraphdata/actions)
+<!-- badges: end -->
 
 This is a data R package, that contains network data sets,
 to be used with the igraph R package.
