@@ -21,7 +21,7 @@ Edge attributes:
 domestic and international carriers that performed at least one
 flight in December of 2010.}
 \item{Departures}{The number of departures (for a given airline and
-aircraft type.}
+aircraft type).}
 \item{Seats}{The total number of seats available on the flights
 carried out by a given airline, using a given aircraft type.}
 \item{Passengers}{The total number of passangers on the flights
