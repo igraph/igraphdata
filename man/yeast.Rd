@@ -6,8 +6,8 @@
 \title{Yeast protein interaction network}
 \format{
 An undirected \code{igraph} graph object.
-Its graph attributes: \sQuote{name}, \sQuote{Citation}, \sQuote{Author}, \sQuote{URL}. \sQuote{Classes}.
-The \sQuote{Classes} attribute contain the key for the classification labels of the proteins,
+ Its graph attributes: \sQuote{name}, \sQuote{Citation}, \sQuote{Author}, \sQuote{URL}. \sQuote{Classes}.
+ The \sQuote{Classes} attribute contain the key for the classification labels of the proteins,
 in a data frame, the original MIPS categories are given after the semicolon:
 \describe{
 \item{E}{energy production; energy}
@@ -45,11 +45,11 @@ Comprehensive protein-protein interaction maps promise to reveal many aspects
 of the complex regulatory network underlying cellular function.
 
 This data set was compiled by von Mering et al. (see reference below), combining various sources.
-Only the interactions that have \sQuote{high} and \sQuote{medium} confidence are included here.
+ Only the interactions that have \sQuote{high} and \sQuote{medium} confidence are included here.
 }
 \references{
 Comparative assessment of large-scale data sets of protein-protein interactions.
-Christian von Mering, Roland Krause, Berend Snel, Michael Cornell, Stephen G. Oliver, Stanley Fields and Peer Bork.
-\emph{Nature} 417, 399-403 (2002)
+ Christian von Mering, Roland Krause, Berend Snel, Michael Cornell, Stephen G. Oliver, Stanley Fields and Peer Bork.
+ \emph{Nature} 417, 399-403 (2002)
 }
 \keyword{datasets}
