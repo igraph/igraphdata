@@ -1,43 +1,56 @@
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<!-- README.md and index.md are generated from README.Rmd.
+     Edit that file and render it the usual way: rmarkdown::render(),
+     devtools::build_readme(), or the Knit button. The cynkratemplate
+     package must be installed; it supplies the output format. -->
 
 # Data sets for the igraph R package
 
-[![Linux build status](https://travis-ci.org/igraph/igraphdata.png)](https://travis-ci.org/igraph/igraphdata) [![Windows build status](https://ci.appveyor.com/api/projects/status/6wov9hh8oprrpkhs?svg=true)](https://ci.appveyor.com/project/gaborcsardi/igraphdata)
+[![Linux build status](https://travis-ci.org/igraph/igraphdata.png)](https://travis-ci.org/igraph/igraphdata)
+[![Windows build status](https://ci.appveyor.com/api/projects/status/6wov9hh8oprrpkhs?svg=true)](https://ci.appveyor.com/project/gaborcsardi/igraphdata)
 
-This is a data R package, that contains network data sets, to be used with the igraph R package.
+This is a data R package, that contains network data sets,
+to be used with the igraph R package.
 
 ## Installation
 
 From CRAN:
 
-<pre class='chroma'>
-<span><span class='nf'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='o'>(</span><span class='s'>"igraphdata"</span><span class='o'>)</span></span></pre>
+``` r
+install.packages("igraphdata")
+```
 
-You can install the development version from Github, using the [devtools package](https://github.com/hadley/devtools):
+You can install the development version from Github, using the
+[devtools package](https://github.com/hadley/devtools):
 
-<pre class='chroma'>
-<span><span class='nf'>devtools</span><span class='nf'>::</span><span class='nf'><a href='https://remotes.r-lib.org/reference/install_github.html'>install_github</a></span><span class='o'>(</span><span class='s'>"igraph/igraphdata"</span><span class='o'>)</span></span></pre>
+``` r
+devtools::install_github("igraph/igraphdata")
+```
 
 ## Usage
 
-<pre class='chroma'>
-<span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='http://igraph.org'>igraphdata</a></span><span class='o'>)</span></span>
-<span><span class='nf'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='o'>(</span>package <span class='o'>=</span> <span class='s'>"igraphdata"</span><span class='o'>)</span></span></pre>
-<pre class='chroma'>
-<span><span class='c'>#&gt; Data sets in package 'igraphdata':</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; Koenigsberg             Bridges of Koenigsberg from Euler's times</span></span>
-<span><span class='c'>#&gt; UKfaculty               Friendship network of a UK university faculty</span></span>
-<span><span class='c'>#&gt; USairports              US airport network, 2010 December</span></span>
-<span><span class='c'>#&gt; enron                   Enron Email Network</span></span>
-<span><span class='c'>#&gt; foodwebs                A collection of food webs</span></span>
-<span><span class='c'>#&gt; immuno                  Immunoglobulin interaction network</span></span>
-<span><span class='c'>#&gt; karate                  Zachary's karate club network</span></span>
-<span><span class='c'>#&gt; kite                    Krackhardt's kite</span></span>
-<span><span class='c'>#&gt; macaque                 Visuotactile brain areas and connections</span></span>
-<span><span class='c'>#&gt; rfid                    Hospital encounter network data</span></span>
-<span><span class='c'>#&gt; yeast                   Yeast protein interaction network</span></span></pre>
+``` r
+library(igraphdata)
+data(package = "igraphdata")
+```
+
+    #> Data sets in package 'igraphdata':
+    #> 
+    #> enron                   Enron Email Network
+    #> foodwebs                A collection of food webs
+    #> immuno                  Immunoglobulin interaction network
+    #> karate                  Zachary's karate club network
+    #> kite                    Krackhardt's kite
+    #> Koenigsberg             Bridges of Koenigsberg from Euler's times
+    #> macaque                 Visuotactile brain areas and connections
+    #> rfid                    Hospital encounter network data
+    #> UKfaculty               Friendship network of a UK university faculty
+    #> USairports              US airport network, 2010 December
+    #> yeast                   Yeast protein interaction network
+
+------------------------------------------------------------------------
 
 # License
 
-CC BY-SA 4.0, plus see [LICENSE](LICENSE) for the licenses of the individual data sets.
+CC BY-SA 4.0, plus see [LICENSE](LICENSE) for the licenses of the
+individual data sets.
