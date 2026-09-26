@@ -64,7 +64,6 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
 <div class="section level1">
 <div class="page-header"><h1 id="data-sets-for-the-igraph-r-package">Data sets for the igraph R package<a class="anchor" aria-label="anchor" href="#data-sets-for-the-igraph-r-package"></a>
 </h1></div>
@@ -74,40 +73,33 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>From CRAN:</p>
-<pre class="chroma">
-<span><span class="nf"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="o">(</span><span class="s">"igraphdata"</span><span class="o">)</span></span></pre>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"igraphdata"</span><span class="op">)</span></span></code></pre></div>
 <p>You can install the development version from Github, using the <a href="https://github.com/hadley/devtools" class="external-link">devtools package</a>:</p>
-<pre class="chroma">
-<span><span class="nf">devtools</span><span class="nf">::</span><span class="nf"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="o">(</span><span class="s">"igraph/igraphdata"</span><span class="o">)</span></span></pre>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"igraph/igraphdata"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<pre class="chroma">
-<span><span class="kr"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="o">(</span><span class="nv"><a href="http://igraph.org" class="external-link">igraphdata</a></span><span class="o">)</span></span>
-<span><span class="nf"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="o">(</span>package <span class="o">=</span> <span class="s">"igraphdata"</span><span class="o">)</span></span></pre>
-<pre class="chroma">
-<span><span class="c">#&gt; Data sets in package 'igraphdata':</span></span>
-<span><span class="c">#&gt; </span></span>
-<span><span class="c">#&gt; Koenigsberg             Bridges of Koenigsberg from Euler's times</span></span>
-<span><span class="c">#&gt; UKfaculty               Friendship network of a UK university faculty</span></span>
-<span><span class="c">#&gt; USairports              US airport network, 2010 December</span></span>
-<span><span class="c">#&gt; enron                   Enron Email Network</span></span>
-<span><span class="c">#&gt; foodwebs                A collection of food webs</span></span>
-<span><span class="c">#&gt; immuno                  Immunoglobulin interaction network</span></span>
-<span><span class="c">#&gt; karate                  Zachary's karate club network</span></span>
-<span><span class="c">#&gt; kite                    Krackhardt's kite</span></span>
-<span><span class="c">#&gt; macaque                 Visuotactile brain areas and connections</span></span>
-<span><span class="c">#&gt; rfid                    Hospital encounter network data</span></span>
-<span><span class="c">#&gt; yeast                   Yeast protein interaction network</span></span></pre>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://igraph.org" class="external-link">igraphdata</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"igraphdata"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#&gt; Data sets in package 'igraphdata':</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; enron                   Enron Email Network</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; foodwebs                A collection of food webs</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; immuno                  Immunoglobulin interaction network</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; karate                  Zachary's karate club network</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; kite                    Krackhardt's kite</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; Koenigsberg             Bridges of Koenigsberg from Euler's times</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; macaque                 Visuotactile brain areas and connections</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; rfid                    Hospital encounter network data</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; UKfaculty               Friendship network of a UK university faculty</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; USairports              US airport network, 2010 December</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; yeast                   Yeast protein interaction network</span></span></code></pre></div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
-</h1>
-<p>CC BY-SA 4.0, plus see <a href="LICENSE">LICENSE</a> for the licenses of the individual data sets.</p>
-</div>
-
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
