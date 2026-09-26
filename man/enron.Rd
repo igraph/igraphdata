@@ -11,30 +11,30 @@ Graph attributes: \itemize{
 \item \sQuote{LDC_names} The names of the 32 LDC catagories the emails are classfied into by Michael W. Berry
 (\url{http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf})
 \item \sQuote{LDC_desc} Longer descriptions of the 32 LDC categories.
-\item \sQuote{Citation} Additionally, see also the references below.
-\item \sQuote{name}
+ \item \sQuote{Citation} Additionally, see also the references below.
+ \item \sQuote{name}
 }
 
 Vertex attributes: \itemize{
 \item \sQuote{Email} Email address.
-\item \sQuote{Name} Real name.
-\item \sQuote{Note} E.g. position at Enron.
-}
+ \item \sQuote{Name} Real name.
+ \item \sQuote{Note} E.g. position at Enron.
+ }
 
 Edge attributes: \itemize{
 \item \sQuote{Time} When the email was sent.
-Note that some time labels are from 1979,
+ Note that some time labels are from 1979,
 these are certainly wrong and you might want to remove them before analyses that include time.
-\item \sQuote{Reciptype} Recipient type, \sQuote{to}, \sQuote{cc} or \sQuote{bcc}.
-\item \sQuote{Topic} Assigned based on 3-means clustering of randomly selected 3,120 out of all 125,409 messages,
+ \item \sQuote{Reciptype} Recipient type, \sQuote{to}, \sQuote{cc} or \sQuote{bcc}.
+ \item \sQuote{Topic} Assigned based on 3-means clustering of randomly selected 3,120 out of all 125,409 messages,
 then NN classification for the whole corpus.
-Note that topic 0 means an outlier, e.g., too few words or all meaningless numbers in the message body.
-\item \sQuote{LDC_topic} Assigned based on Michael W. Berry's 2001 \dQuote{Annotated (by Topic) Enron Email Data Set.}
+ Note that topic 0 means an outlier, e.g., too few words or all meaningless numbers in the message body.
+ \item \sQuote{LDC_topic} Assigned based on Michael W. Berry's 2001 \dQuote{Annotated (by Topic) Enron Email Data Set.}
 (\url{http://www.cis.jhu.edu/~parky/Enron/Anno_Topic_exp_LDC.pdf})
 There are 32 topics.
-Topic "0" means an outlier, e.g., too few words or all meaningless numbers in the message body, etc.
+ Topic "0" means an outlier, e.g., too few words or all meaningless numbers in the message body, etc.
 Topic "-1" means there is no matching topic.
-}
+ }
 }
 \source{
 \url{http://www.cis.jhu.edu/~parky/Enron/}

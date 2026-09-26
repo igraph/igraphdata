@@ -22,5 +22,5 @@ in the GML, GraphML or Pajek format.
 }
 \references{
 D. E. Knuth, The Stanford GraphBase: A Platform for Combinatorial Computing, Addison-Wesley, Reading, MA (1993).
-\url{https://www-cs-faculty.stanford.edu/~knuth/sgb.html}
+ \url{https://www-cs-faculty.stanford.edu/~knuth/sgb.html}
 }

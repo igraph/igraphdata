@@ -14,15 +14,15 @@ ns_graph(name, token = NULL, size_limit = 1)
 }
 \arguments{
 \item{name}{Character. The name of the network dataset.
-To get a network from a collection, use the format \verb{<collection_name>/<network_name>}.}
+ To get a network from a collection, use the format \verb{<collection_name>/<network_name>}.}
 
 \item{collection}{Logical. If TRUE, get the metadata of a whole collection of networks.}
 
 \item{token}{Character. Some networks have restricted access and require a token.}
 
 \item{size_limit}{Numeric. Maximum allowed file size in GB.
-Larger files will be prevented from being downloaded.
-See \url{https://networks.skewed.de/restricted}.}
+ Larger files will be prevented from being downloaded.
+ See \url{https://networks.skewed.de/restricted}.}
 }
 \value{
 \describe{
@@ -33,9 +33,9 @@ See \url{https://networks.skewed.de/restricted}.}
 }
 \description{
 These functions provide tools to interact with the Netzschleuder network dataset archive.
-Netzschleuder (\url{https://networks.skewed.de/}) is a large online repository for network datasets,
+ Netzschleuder (\url{https://networks.skewed.de/}) is a large online repository for network datasets,
 aimed at aiding scientific research.
-\describe{
+ \describe{
 \item{\code{ns_metadata()}}{ retrieves metadata about a network or network collection.}
 \item{\code{ns_df()}}{downloads the graph data as data frames (nodes, edges, and graph properties).}
 \item{\code{ns_graph()}}{creates an \code{igraph} object directly from Netzschleuder.}
