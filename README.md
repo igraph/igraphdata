@@ -1,13 +1,14 @@
 
 <!-- README.md and index.md are generated from README.Rmd.
-     Edit that file and render it the usual way: rmarkdown::render(),
-     devtools::build_readme(), or the Knit button. The cynkratemplate
-     package must be installed; it supplies the output format. -->
+     Edit that file and render it the usual way: rmarkdown::render(), devtools::build_readme(), or the Knit button.
+     The cynkratemplate package must be installed; it supplies the output format. -->
 
 # Data sets for the igraph R package
 
-[![Linux build status](https://travis-ci.org/igraph/igraphdata.png)](https://travis-ci.org/igraph/igraphdata)
-[![Windows build status](https://ci.appveyor.com/api/projects/status/6wov9hh8oprrpkhs?svg=true)](https://ci.appveyor.com/project/gaborcsardi/igraphdata)
+<!-- badges: start -->
+
+[![rcc](https://github.com/igraph/igraphdata/workflows/rcc/badge.svg)](https://github.com/igraph/igraphdata/actions)
+<!-- badges: end -->
 
 This is a data R package, that contains network data sets,
 to be used with the igraph R package.
@@ -20,8 +21,8 @@ From CRAN:
 install.packages("igraphdata")
 ```
 
-You can install the development version from Github, using the
-[devtools package](https://github.com/hadley/devtools):
+You can install the development version from Github,
+using the [devtools package](https://github.com/hadley/devtools):
 
 ``` r
 devtools::install_github("igraph/igraphdata")
@@ -52,5 +53,4 @@ data(package = "igraphdata")
 
 # License
 
-CC BY-SA 4.0, plus see [LICENSE](LICENSE) for the licenses of the
-individual data sets.
+CC BY-SA 4.0, plus see [LICENSE](LICENSE) for the licenses of the individual data sets.
