@@ -35,16 +35,16 @@ data(package = "igraphdata")
 
     #> Data sets in package 'igraphdata':
     #> 
+    #> Koenigsberg             Bridges of Koenigsberg from Euler's times
+    #> UKfaculty               Friendship network of a UK university faculty
+    #> USairports              US airport network, 2010 December
     #> enron                   Enron Email Network
     #> foodwebs                A collection of food webs
     #> immuno                  Immunoglobulin interaction network
     #> karate                  Zachary's karate club network
     #> kite                    Krackhardt's kite
-    #> Koenigsberg             Bridges of Koenigsberg from Euler's times
     #> macaque                 Visuotactile brain areas and connections
     #> rfid                    Hospital encounter network data
-    #> UKfaculty               Friendship network of a UK university faculty
-    #> USairports              US airport network, 2010 December
     #> yeast                   Yeast protein interaction network
 
 ------------------------------------------------------------------------
