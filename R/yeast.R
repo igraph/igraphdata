@@ -39,7 +39,7 @@
 #'   }
 #'
 #'   Vertex attributes: \sQuote{name}, \sQuote{Description}, \sQuote{Class},
-#'   the last one contains the class of the protein, accoring to the classification above.
+#'   the last one contains the class of the protein, according to the classification above.
 #'
 #'   Note that some proteins in the network did not appear in the annotation files,
 #'   the \sQuote{Class} and \sQuote{Description} attributes are `NA` for these.
