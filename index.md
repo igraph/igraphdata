@@ -12,6 +12,32 @@
 This is a data R package, that contains network data sets,
 to be used with the igraph R package.
 
+## Goals and non-goals
+
+igraphdata aims to:
+
+- Ship a small collection of network data sets as ready-to-use `igraph` objects,
+  lazily loaded so that `karate` or `USairports` is there as soon as the package is attached.
+- Record where each network came from.
+  Every data set documents its source and the reference to cite.
+- Keep the licensing of the individual data sets visible.
+  `LICENSE` lists the copyright holder and the licence of each one, separately from the package licence.
+- Ship the "Les Miserables" network as example files in the GML, GraphML and Pajek formats,
+  reachable with `lesmis_gml()`, `lesmis_graphml()` and `lesmis_pajek()`.
+- Reach the [netzschleuder](https://networks.skewed.de/) repository from R,
+  with `ns_metadata()`, `ns_df()` and `ns_graph()`.
+
+It is explicitly not trying to:
+
+- Implement graph algorithms.
+  The data sets are here to be analysed with igraph, which this package imports.
+- Generate networks.
+  The bundled data sets are fixed, and ship as data files rather than being constructed when the package loads.
+- Be an exhaustive catalogue of network data.
+  The netzschleuder accessors reach a much larger collection that stays outside the package.
+- Download whole netzschleuder collections, or files of unbounded size.
+  Downloading a whole collection is refused, and `ns_df()` takes a `size_limit` argument that defaults to 1 GB.
+
 ## Installation
 
 From CRAN:
