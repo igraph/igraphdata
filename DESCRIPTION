@@ -2,24 +2,24 @@ Package: igraphdata
 Title: A Collection of Network Data Sets for the 'igraph' Package
 Version: 1.0.1.9019
 Authors@R: c(
-    person("Gábor", "Csárdi", , role = "aut",
+    person("Gábor", "Csárdi", role = "aut",
            comment = c(ORCID = "0000-0001-7098-9676")),
-    person("Szabolcs", "Horvát", , role = "ctb",
+    person("Szabolcs", "Horvát", role = "ctb",
            comment = c(ORCID = "0000-0002-3100-523X")),
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),
     person("Maëlle", "Salmon", role = "ctb",
            comment = c(ORCID = "0000-0002-2815-0399")),
-    person("David","Schoch", role = "aut",
-           comment = c(ORCID="0000-0003-2952-4812")),
+    person("David", "Schoch", role = "aut",
+           comment = c(ORCID = "0000-0003-2952-4812")),
     person("Chan Zuckerberg Initiative", role = "fnd")
   )
 Description: A small collection of various network data sets, to use with
     the 'igraph' package: the Enron email network, various food webs,
     interactions in the immunoglobulin protein, the karate club network,
     Koenigsberg's bridges, visuotactile brain areas of the macaque monkey,
-    UK faculty friendship network, domestic US flights network, etc. Also provides
-    access to the API of <https://networks.skewed.de/>.
+    UK faculty friendship network, domestic US flights network, etc. Also
+    provides access to the API of <https://networks.skewed.de/>.
 License: CC BY-SA 4.0 + file LICENSE
 URL: http://igraph.org
 BugReports: https://github.com/igraph/igraphdata/issues
@@ -29,12 +29,12 @@ Imports:
     igraph (>= 2.0.0),
     rlang
 Suggests:
-    cli, 
-    minty, 
+    cli,
     httr2,
+    minty,
     testthat (>= 3.0.0)
+Config/roxygen2/version: 8.1.1.9000
+Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-Config/testthat/edition: 3
-Config/roxygen2/version: 8.1.1.9000
